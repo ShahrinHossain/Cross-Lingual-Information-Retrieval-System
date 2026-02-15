@@ -264,6 +264,16 @@ class RankingAndScoringEngine:
 # Evaluation metrics (Mandatory) - WITH URL NORMALIZATION
 # -----------------------------
 
+def _normalize_url(url: str) -> str:
+    """Normalize URL for comparison (strip, remove trailing slash)."""
+    if not url:
+        return ""
+    url = str(url).strip()
+    if url.endswith("/"):
+        url = url[:-1]
+    return url
+
+
 def precision_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> float:
     if k <= 0:
         return 0.0
@@ -274,14 +284,19 @@ def precision_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> f
     
     if not top_k_normalized:
         return 0.0
+<<<<<<< HEAD
     
     relevant_in_top_k = sum(1 for url in top_k_normalized if url in relevant_urls_normalized)
+=======
+    relevant_in_top_k = sum(1 for url in top_k if _normalize_url(url) in relevant_urls)
+>>>>>>> becf250b8b0507b7d37b68f02d67bd5cd90cb857
     return relevant_in_top_k / float(k)
 
 
 def recall_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> float:
     if not relevant_urls:
         return 0.0
+<<<<<<< HEAD
     
     # Normalize URLs for comparison
     top_k_normalized = [normalize_url(url) for url in ranked_urls[:k]]
@@ -289,6 +304,11 @@ def recall_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> floa
     
     retrieved_relevant = sum(1 for url in top_k_normalized if url in relevant_urls_normalized)
     return retrieved_relevant / float(len(relevant_urls_normalized))
+=======
+    top_k = ranked_urls[:k]
+    retrieved_relevant = sum(1 for url in top_k if _normalize_url(url) in relevant_urls)
+    return retrieved_relevant / float(len(relevant_urls))
+>>>>>>> becf250b8b0507b7d37b68f02d67bd5cd90cb857
 
 
 def dcg_at_k(binary_relevance: List[int], k: int) -> float:
@@ -306,12 +326,16 @@ def dcg_at_k(binary_relevance: List[int], k: int) -> float:
 def ndcg_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> float:
     if k <= 0:
         return 0.0
+<<<<<<< HEAD
     
     # Normalize URLs for comparison
     ranked_urls_normalized = [normalize_url(url) for url in ranked_urls[:k]]
     relevant_urls_normalized = {normalize_url(url) for url in relevant_urls}
     
     relevance_list = [1 if url in relevant_urls_normalized else 0 for url in ranked_urls_normalized]
+=======
+    relevance_list = [1 if _normalize_url(url) in relevant_urls else 0 for url in ranked_urls[:k]]
+>>>>>>> becf250b8b0507b7d37b68f02d67bd5cd90cb857
     ideal_list = sorted(relevance_list, reverse=True)
 
     dcg_value = dcg_at_k(relevance_list, k)
@@ -327,12 +351,17 @@ def mean_reciprocal_rank(ranked_urls: List[str], relevant_urls: Set[str]) -> flo
     MRR for a single query:
       1 / rank_of_first_relevant
     """
+<<<<<<< HEAD
     # Normalize URLs for comparison
     ranked_urls_normalized = [normalize_url(url) for url in ranked_urls]
     relevant_urls_normalized = {normalize_url(url) for url in relevant_urls}
     
     for index, url in enumerate(ranked_urls_normalized):
         if url in relevant_urls_normalized:
+=======
+    for index, url in enumerate(ranked_urls):
+        if _normalize_url(url) in relevant_urls:
+>>>>>>> becf250b8b0507b7d37b68f02d67bd5cd90cb857
             return 1.0 / float(index + 1)
     return 0.0
 
@@ -393,7 +422,7 @@ class Evaluator:
         for item in qrels_items:
             query_text = str(item.get("query", "")).strip()
             relevant_urls_list = item.get("relevant_urls", []) or []
-            relevant_urls = set(str(u).strip() for u in relevant_urls_list if str(u).strip())
+            relevant_urls = set(_normalize_url(u) for u in relevant_urls_list if _normalize_url(u))
 
             ranking_result = self.ranking_engine.rank(
                 user_query=query_text,
@@ -402,7 +431,7 @@ class Evaluator:
                 include_debug=False,
             )
 
-            ranked_urls = [doc.url for doc in ranking_result.ranked_documents if doc.url]
+            ranked_urls = [_normalize_url(doc.url) for doc in ranking_result.ranked_documents if doc.url]
 
             # Metrics (mandatory)
             p10 = precision_at_k(ranked_urls, relevant_urls, k=10)
