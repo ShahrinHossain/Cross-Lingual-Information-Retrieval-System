@@ -21,6 +21,28 @@ from clir.query_retrieval import QueryRetrievalEngine
 
 
 # -----------------------------
+# URL Normalization
+# -----------------------------
+
+def normalize_url(url: str) -> str:
+    """
+    Normalize URL for comparison to avoid mismatches due to:
+    - http vs https
+    - trailing slashes
+    - case differences
+    """
+    if not url:
+        return ""
+    url = url.strip().lower()
+    # Remove trailing slash
+    url = url.rstrip('/')
+    # Convert http to https for consistency
+    if url.startswith('http://'):
+        url = 'https://' + url[7:]
+    return url
+
+
+# -----------------------------
 # Data structures
 # -----------------------------
 
@@ -109,9 +131,11 @@ def deduplicate_by_url_keep_best(documents: List[RankedDocument]) -> List[Ranked
     for doc in documents:
         if not doc.url:
             continue
-        existing = best_by_url.get(doc.url)
+        # Use normalized URL for deduplication
+        normalized = normalize_url(doc.url)
+        existing = best_by_url.get(normalized)
         if existing is None or doc.matching_confidence > existing.matching_confidence:
-            best_by_url[doc.url] = doc
+            best_by_url[normalized] = doc
     # sort again
     return sorted(best_by_url.values(), key=lambda d: d.matching_confidence, reverse=True)
 
@@ -237,25 +261,34 @@ class RankingAndScoringEngine:
 
 
 # -----------------------------
-# Evaluation metrics (Mandatory)
+# Evaluation metrics (Mandatory) - WITH URL NORMALIZATION
 # -----------------------------
 
 def precision_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> float:
     if k <= 0:
         return 0.0
-    top_k = ranked_urls[:k]
-    if not top_k:
+    
+    # Normalize URLs for comparison
+    top_k_normalized = [normalize_url(url) for url in ranked_urls[:k]]
+    relevant_urls_normalized = {normalize_url(url) for url in relevant_urls}
+    
+    if not top_k_normalized:
         return 0.0
-    relevant_in_top_k = sum(1 for url in top_k if url in relevant_urls)
+    
+    relevant_in_top_k = sum(1 for url in top_k_normalized if url in relevant_urls_normalized)
     return relevant_in_top_k / float(k)
 
 
 def recall_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> float:
     if not relevant_urls:
         return 0.0
-    top_k = ranked_urls[:k]
-    retrieved_relevant = sum(1 for url in top_k if url in relevant_urls)
-    return retrieved_relevant / float(len(relevant_urls))
+    
+    # Normalize URLs for comparison
+    top_k_normalized = [normalize_url(url) for url in ranked_urls[:k]]
+    relevant_urls_normalized = {normalize_url(url) for url in relevant_urls}
+    
+    retrieved_relevant = sum(1 for url in top_k_normalized if url in relevant_urls_normalized)
+    return retrieved_relevant / float(len(relevant_urls_normalized))
 
 
 def dcg_at_k(binary_relevance: List[int], k: int) -> float:
@@ -273,7 +306,12 @@ def dcg_at_k(binary_relevance: List[int], k: int) -> float:
 def ndcg_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> float:
     if k <= 0:
         return 0.0
-    relevance_list = [1 if url in relevant_urls else 0 for url in ranked_urls[:k]]
+    
+    # Normalize URLs for comparison
+    ranked_urls_normalized = [normalize_url(url) for url in ranked_urls[:k]]
+    relevant_urls_normalized = {normalize_url(url) for url in relevant_urls}
+    
+    relevance_list = [1 if url in relevant_urls_normalized else 0 for url in ranked_urls_normalized]
     ideal_list = sorted(relevance_list, reverse=True)
 
     dcg_value = dcg_at_k(relevance_list, k)
@@ -289,8 +327,12 @@ def mean_reciprocal_rank(ranked_urls: List[str], relevant_urls: Set[str]) -> flo
     MRR for a single query:
       1 / rank_of_first_relevant
     """
-    for index, url in enumerate(ranked_urls):
-        if url in relevant_urls:
+    # Normalize URLs for comparison
+    ranked_urls_normalized = [normalize_url(url) for url in ranked_urls]
+    relevant_urls_normalized = {normalize_url(url) for url in relevant_urls}
+    
+    for index, url in enumerate(ranked_urls_normalized):
+        if url in relevant_urls_normalized:
             return 1.0 / float(index + 1)
     return 0.0
 
@@ -400,7 +442,7 @@ def print_ranked_results(query_result: QueryEvaluationResult) -> None:
 
     if query_result.warning_low_confidence:
         print(
-            f"Warning: Low matching confidence (score: {query_result.top_confidence:.2f}). "
+            f"⚠️  Warning: Low matching confidence (score: {query_result.top_confidence:.2f}). "
             f"Results may not be relevant."
         )
 
@@ -424,7 +466,7 @@ def print_ranked_results(query_result: QueryEvaluationResult) -> None:
     
     if query_result.total_retrieval_time_ms is not None:
         print("-" * 90)
-        print(f"Total Retrieval Time: {query_result.total_retrieval_time_ms:.2f} ms")
+        print(f"⏱️  Total Retrieval Time: {query_result.total_retrieval_time_ms:.2f} ms")
         if query_result.timing_breakdown:
             for key, value in query_result.timing_breakdown.items():
                 if value > 0:
