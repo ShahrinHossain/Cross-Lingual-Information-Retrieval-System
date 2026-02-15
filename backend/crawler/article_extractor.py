@@ -5,19 +5,19 @@ from dateutil import parser as dateparser
 
 HEADERS = {"User-Agent": "CLIR-Assignment-Crawler/1.0"}
 
+# Remove extra whitespace and trim text
 def clean_text(s: str) -> str:
     s = re.sub(r"\s+", " ", s)
     return s.strip()
 
+# Extract publication date from meta tags or time elements
 def extract_date(soup: BeautifulSoup):
-    # Try common meta tags
     candidates = []
     for key in ["article:published_time", "pubdate", "publishdate", "date", "DC.date.issued"]:
         tag = soup.find("meta", {"property": key}) or soup.find("meta", {"name": key})
         if tag and tag.get("content"):
             candidates.append(tag["content"])
 
-    # Try <time datetime="...">
     time_tag = soup.find("time")
     if time_tag and time_tag.get("datetime"):
         candidates.append(time_tag["datetime"])
@@ -29,6 +29,7 @@ def extract_date(soup: BeautifulSoup):
             continue
     return None
 
+# Extract page title from title tag or h1 element
 def extract_title(soup: BeautifulSoup):
     if soup.title and soup.title.text:
         return clean_text(soup.title.text)
@@ -37,17 +38,14 @@ def extract_title(soup: BeautifulSoup):
         return clean_text(h1.get_text(" "))
     return None
 
+# Extract main content from paragraph tags
 def extract_body(soup: BeautifulSoup):
-    """
-    Very simple baseline: join all <p> tags.
-    Later you can add site-specific rules if needed.
-    """
     ps = soup.find_all("p")
     text = " ".join([p.get_text(" ") for p in ps])
     text = clean_text(text)
-    # Avoid super-short pages
     return text if len(text) > 200 else None
 
+# Fetch URL and extract title, body, and date
 def fetch_and_extract(url: str):
     r = requests.get(url, headers=HEADERS, timeout=20)
     if r.status_code != 200:

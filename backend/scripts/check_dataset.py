@@ -2,6 +2,7 @@ import json
 
 REQUIRED = ["title", "body", "url", "date", "language"]
 
+# Count valid, invalid, and malformed records in JSONL file
 def count(path):
     total = 0          # total non-empty lines processed
     bad = 0            # valid JSON but missing required fields
@@ -11,7 +12,7 @@ def count(path):
         for lineno, line in enumerate(f, start=1):
             line = line.strip()
             if not line:
-                continue  # skip empty lines
+                continue  
 
             total += 1
 
@@ -20,9 +21,9 @@ def count(path):
             except json.JSONDecodeError as e:
                 decode_errors += 1
                 preview = line[:200].replace("\n", "\\n")
-                print(f"\n❌ JSONDecodeError in {path} at line {lineno}: {e}")
+                print(f"\n JSONDecodeError in {path} at line {lineno}: {e}")
                 print(f"Line preview: {preview}")
-                continue  # keep going instead of crashing
+                continue  
 
             if any(k not in obj or obj[k] is None for k in REQUIRED):
                 bad += 1

@@ -1,0 +1,6 @@
+Metric,Value
+queries_count,19.0000
+Precision@10,0.0684
+Recall@50,0.1575
+nDCG@10,0.2333
+MRR,0.1842

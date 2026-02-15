@@ -1,10 +1,4 @@
-# backend/clir/evaluation.py
-"""
-Module D — Ranking, Scoring & Evaluation
 
-Implements ranking with confidence scores, evaluation metrics (Precision@10,
-Recall@50, nDCG@10, MRR), and timing analysis.
-"""
 
 from __future__ import annotations
 
@@ -74,8 +68,8 @@ class QueryEvaluationResult:
     recall_at_50: Optional[float] = None
     ndcg_at_10: Optional[float] = None
     mrr: Optional[float] = None
-    
-    # Timing information (in milliseconds)
+    average_precision: Optional[float] = None  
+
     total_retrieval_time_ms: Optional[float] = None
     translation_time_ms: Optional[float] = None
     embedding_time_ms: Optional[float] = None
@@ -278,37 +272,22 @@ def precision_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> f
     if k <= 0:
         return 0.0
     
-    # Normalize URLs for comparison
     top_k_normalized = [normalize_url(url) for url in ranked_urls[:k]]
     relevant_urls_normalized = {normalize_url(url) for url in relevant_urls}
     
     if not top_k_normalized:
         return 0.0
-<<<<<<< HEAD
     
-    relevant_in_top_k = sum(1 for url in top_k_normalized if url in relevant_urls_normalized)
-=======
-    relevant_in_top_k = sum(1 for url in top_k if _normalize_url(url) in relevant_urls)
->>>>>>> becf250b8b0507b7d37b68f02d67bd5cd90cb857
+    relevant_in_top_k = sum(1 for url in top_k_normalized if url in relevant_urls_normalized)  # ← FIXED
     return relevant_in_top_k / float(k)
 
 
 def recall_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> float:
     if not relevant_urls:
         return 0.0
-<<<<<<< HEAD
-    
-    # Normalize URLs for comparison
-    top_k_normalized = [normalize_url(url) for url in ranked_urls[:k]]
-    relevant_urls_normalized = {normalize_url(url) for url in relevant_urls}
-    
-    retrieved_relevant = sum(1 for url in top_k_normalized if url in relevant_urls_normalized)
-    return retrieved_relevant / float(len(relevant_urls_normalized))
-=======
     top_k = ranked_urls[:k]
     retrieved_relevant = sum(1 for url in top_k if _normalize_url(url) in relevant_urls)
     return retrieved_relevant / float(len(relevant_urls))
->>>>>>> becf250b8b0507b7d37b68f02d67bd5cd90cb857
 
 
 def dcg_at_k(binary_relevance: List[int], k: int) -> float:
@@ -326,16 +305,7 @@ def dcg_at_k(binary_relevance: List[int], k: int) -> float:
 def ndcg_at_k(ranked_urls: List[str], relevant_urls: Set[str], k: int) -> float:
     if k <= 0:
         return 0.0
-<<<<<<< HEAD
-    
-    # Normalize URLs for comparison
-    ranked_urls_normalized = [normalize_url(url) for url in ranked_urls[:k]]
-    relevant_urls_normalized = {normalize_url(url) for url in relevant_urls}
-    
-    relevance_list = [1 if url in relevant_urls_normalized else 0 for url in ranked_urls_normalized]
-=======
     relevance_list = [1 if _normalize_url(url) in relevant_urls else 0 for url in ranked_urls[:k]]
->>>>>>> becf250b8b0507b7d37b68f02d67bd5cd90cb857
     ideal_list = sorted(relevance_list, reverse=True)
 
     dcg_value = dcg_at_k(relevance_list, k)
@@ -351,17 +321,8 @@ def mean_reciprocal_rank(ranked_urls: List[str], relevant_urls: Set[str]) -> flo
     MRR for a single query:
       1 / rank_of_first_relevant
     """
-<<<<<<< HEAD
-    # Normalize URLs for comparison
-    ranked_urls_normalized = [normalize_url(url) for url in ranked_urls]
-    relevant_urls_normalized = {normalize_url(url) for url in relevant_urls}
-    
-    for index, url in enumerate(ranked_urls_normalized):
-        if url in relevant_urls_normalized:
-=======
     for index, url in enumerate(ranked_urls):
         if _normalize_url(url) in relevant_urls:
->>>>>>> becf250b8b0507b7d37b68f02d67bd5cd90cb857
             return 1.0 / float(index + 1)
     return 0.0
 

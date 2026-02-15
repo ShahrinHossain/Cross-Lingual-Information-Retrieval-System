@@ -1,11 +1,3 @@
-# backend/clir/query_processor.py
-"""
-Module B — Query Processing & Cross-Lingual Handling
-
-Implements language detection, normalization, translation, query expansion,
-and named entity extraction/mapping for cross-lingual information retrieval.
-"""
-
 from __future__ import annotations
 
 from dataclasses import dataclass, asdict
@@ -15,11 +7,6 @@ import re
 import json
 import time
 import unicodedata
-
-
-# -----------------------------
-# Utilities: script detection
-# -----------------------------
 
 BENGALI_UNICODE_RANGE = (0x0980, 0x09FF)
 
@@ -40,10 +27,6 @@ def contains_latin_script(text: str) -> bool:
 
 
 def detect_language_simple(raw_query: str) -> str:
-    """
-    Returns: 'bn', 'en', 'mixed', 'unknown'
-    Uses script heuristics to avoid heavy dependencies.
-    """
     raw_query = (raw_query or "").strip()
     if not raw_query:
         return "unknown"
@@ -59,13 +42,6 @@ def detect_language_simple(raw_query: str) -> str:
         return "en"
     return "unknown"
 
-
-# -----------------------------
-# Stopwords
-# -----------------------------
-
-# You said you've updated EN_STOPWORDS already—keep your version here.
-# This file includes a strong default set anyway.
 
 EN_STOPWORDS = {
     "a", "an", "the", "is", "am", "are", "was", "were", "be", "been", "being",
@@ -91,23 +67,12 @@ BN_STOPWORDS = {
 BANGLA_STOPWORDS_MINI = BN_STOPWORDS
 
 
-# -----------------------------
-# Normalization
-# -----------------------------
-
 PUNCTUATION_REMOVAL_PATTERN = re.compile(r"[^\w\s\u0980-\u09FF]+", flags=re.UNICODE)
 WHITESPACE_NORMALIZATION_PATTERN = re.compile(r"\s+", flags=re.UNICODE)
 TOKEN_CLEAN_PATTERN = re.compile(r"[^\w\u0980-\u09FF]+", flags=re.UNICODE)
 
 
 def normalize_query(raw_query: str, language_code: str) -> str:
-    """
-    - Trim
-    - Unicode normalize (NFKC)
-    - Remove odd punctuation (keep Bengali letters)
-    - Collapse whitespace
-    - Lowercase only for English
-    """
     normalized_query_text = (raw_query or "").strip()
     normalized_query_text = unicodedata.normalize("NFKC", normalized_query_text)
     normalized_query_text = PUNCTUATION_REMOVAL_PATTERN.sub(" ", normalized_query_text)
@@ -148,19 +113,10 @@ def _clean_token(token: str, language_code: str) -> str:
 
 
 def extract_keywords_for_retrieval(text: str, language_code: str, min_len: int) -> List[str]:
-    """
-    Extracts informative keywords from a text to use for:
-    - evidence matching
-    - optional boosting
-
-    Always removes stopwords here (hard ON) so you don't accidentally
-    match words like: what/are/the/and
-    """
     normalized = normalize_query(text or "", language_code)
     tokens = [_clean_token(t, language_code) for t in tokenize_simple(normalized)]
     tokens = [t for t in tokens if t and len(t) >= min_len]
 
-    # hard-remove stopwords for keywords
     if language_code == "en":
         tokens = [t for t in tokens if t not in EN_STOPWORDS]
     elif language_code == "bn":
@@ -174,22 +130,11 @@ def extract_keywords_for_retrieval(text: str, language_code: str, min_len: int) 
             seen.add(t)
     return ordered
 
-
-# -----------------------------
-# Translation (Required)
-# -----------------------------
-
 class TranslationError(RuntimeError):
     pass
 
 
 class Translator:
-    """
-    Google-Translate based translation (no Transformers, no Keras).
-    Priority:
-      1) deep-translator (GoogleTranslator)
-      2) googletrans (fallback)
-    """
 
     def __init__(self) -> None:
         self._backend_name = None
@@ -198,7 +143,7 @@ class Translator:
 
     def _init_backend(self) -> None:
         try:
-            from deep_translator import GoogleTranslator  # type: ignore
+            from deep_translator import GoogleTranslator  
             self._backend_name = "deep_translator"
             self._backend = GoogleTranslator
             print("Initialized deep-translator backend.")
@@ -207,7 +152,7 @@ class Translator:
             print(f"Failed to initialize deep-translator: {e}")
 
         try:
-            from googletrans import Translator as GoogleTransTranslator  # type: ignore
+            from googletrans import Translator as GoogleTransTranslator  
             self._backend_name = "googletrans"
             self._backend = GoogleTransTranslator()
             print("Initialized googletrans backend.")
@@ -238,14 +183,14 @@ class Translator:
 
         if self._backend_name == "deep_translator":
             try:
-                translator = self._backend(source=src, target=dest)  # type: ignore
+                translator = self._backend(source=src, target=dest)  
                 return translator.translate(input_text)
             except Exception as e:
                 raise TranslationError(f"deep-translator translation failed: {e}") from e
 
         if self._backend_name == "googletrans":
             try:
-                result = self._backend.translate(input_text, src=src, dest=dest)  # type: ignore
+                result = self._backend.translate(input_text, src=src, dest=dest)  
                 return result.text
             except Exception as e:
                 raise TranslationError(f"googletrans translation failed: {e}") from e
@@ -253,9 +198,6 @@ class Translator:
         raise TranslationError("Unknown translation backend configuration.")
 
 
-# -----------------------------
-# Query Expansion (Recommended)
-# -----------------------------
 
 BANGLA_SUFFIXES = [
     "গুলো", "গুলি", "দের", "গুলোকে", "গুলোয়", "গুলোতে", "গুলোয়",
@@ -285,7 +227,7 @@ def generate_english_basic_variants(token: str) -> List[str]:
 
 def generate_english_wordnet_synonyms(token: str, limit: int = 3) -> List[str]:
     try:
-        from nltk.corpus import wordnet as wordnet  # type: ignore
+        from nltk.corpus import wordnet as wordnet  
     except Exception:
         return []
 
@@ -321,18 +263,12 @@ def expand_query_tokens(token_list: List[str], language_code: str, use_wordnet: 
     return sorted([token for token in expanded_token_set if token])
 
 
-# -----------------------------
-# Named Entity Extraction + Mapping (Recommended)
-# -----------------------------
 
 CAPITALIZED_SEQUENCE_PATTERN = re.compile(r"\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\b")
 ACRONYM_PATTERN = re.compile(r"\b([A-Z]{2,})\b")
 
 
 def extract_named_entities(raw_query: str, language_code: str) -> List[str]:
-    """
-    Heuristic NER fallback.
-    """
     query_text = (raw_query or "").strip()
     if not query_text:
         return []
@@ -439,9 +375,6 @@ def map_named_entities(entity_list: List[str], named_entity_map: Dict[str, str])
     return mapped_entities
 
 
-# -----------------------------
-# Output Structures
-# -----------------------------
 
 @dataclass
 class QueryProcessingResult:
@@ -462,14 +395,8 @@ class QueryProcessingResult:
         return asdict(self)
 
 
-# -----------------------------
-# Query Processor (Module B)
-# -----------------------------
 
 class QueryProcessor:
-    """
-    Main entrypoint for Module B.
-    """
 
     def __init__(
         self,
@@ -574,7 +501,6 @@ class QueryProcessor:
             if translated_query_text:
                 expanded_queries[translated_language].append(normalize_query(translated_query_text, translated_language))
 
-        # Add mapped entities (for both languages)
         if mapped_named_entities:
             mapped_terms: List[str] = []
             for original_entity, mapped_entity in mapped_named_entities.items():
@@ -598,7 +524,7 @@ class QueryProcessor:
                 if english_mapped_terms:
                     expanded_queries["en"].append(" ".join(english_mapped_terms).strip())
 
-        # De-duplicate expanded queries
+
         for language_key in ("bn", "en"):
             seen_query_strings = set()
             cleaned_query_list = []
@@ -612,16 +538,14 @@ class QueryProcessor:
                 seen_query_strings.add(candidate_query)
             expanded_queries[language_key] = cleaned_query_list
 
-        # Build retrieval queries and keywords for Module C
+
         retrieval_queries: Dict[str, List[str]] = {"bn": [], "en": []}
 
-        # Use only clean normalized query per language (NO token-soup)
         if expanded_queries["en"]:
             retrieval_queries["en"].append(expanded_queries["en"][0])
         if expanded_queries["bn"]:
             retrieval_queries["bn"].append(expanded_queries["bn"][0])
 
-        # Add entity-only query as a second retrieval variant (useful for location/person)
         if mapped_named_entities:
             mapped_bn_terms: List[str] = []
             mapped_en_terms: List[str] = []
@@ -637,7 +561,6 @@ class QueryProcessor:
             if mapped_en_terms:
                 retrieval_queries["en"].append(" ".join(mapped_en_terms).strip())
 
-        # Dedup retrieval queries and cap
         for language_key in ("bn", "en"):
             seen = set()
             unique_list: List[str] = []
@@ -649,7 +572,6 @@ class QueryProcessor:
                 seen.add(q)
             retrieval_queries[language_key] = unique_list[:5]
 
-        # Extract keywords from retrieval queries (hard stopword removal)
         retrieval_keywords = {
             "en": extract_keywords_for_retrieval(" ".join(retrieval_queries["en"]), "en", min_len=3),
             "bn": extract_keywords_for_retrieval(" ".join(retrieval_queries["bn"]), "bn", min_len=2),
@@ -690,9 +612,6 @@ class QueryProcessor:
         )
 
 
-# -----------------------------
-# Helper: retrieval queries for Module C
-# -----------------------------
 
 def build_queries_for_retrieval(processed_query_result: QueryProcessingResult, target_language: str, max_queries: int = 5) -> List[str]:
     """
@@ -704,9 +623,6 @@ def build_queries_for_retrieval(processed_query_result: QueryProcessingResult, t
     candidate_queries = processed_query_result.retrieval_queries.get(target_language, [])
     return candidate_queries[:max_queries]
 
-
-# -----------------------------
-# -----------------------------
 
 if __name__ == "__main__":
     query_processor = QueryProcessor(enable_stopwords=True, enable_wordnet_expansion=False)

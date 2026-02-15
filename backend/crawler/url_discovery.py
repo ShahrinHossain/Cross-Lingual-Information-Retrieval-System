@@ -6,10 +6,8 @@ from urllib.parse import urljoin
 
 HEADERS = {"User-Agent": "CLIR-Assignment-Crawler/1.0"}
 
+# Discover and collect URLs from XML sitemaps
 def get_sitemap_urls(site_base: str):
-    """
-    Tries common sitemap locations and returns a deduplicated list of URLs.
-    """
     candidates = [
         urljoin(site_base, "/sitemap.xml"),
         urljoin(site_base, "/sitemap_index.xml"),
@@ -29,7 +27,6 @@ def get_sitemap_urls(site_base: str):
         except Exception:
             pass
 
-    # If it's a sitemap index, it may contain other sitemaps
     expanded = set()
     for u in list(urls):
         if u.endswith(".xml") and "sitemap" in u:
@@ -44,10 +41,10 @@ def get_sitemap_urls(site_base: str):
 
     urls |= expanded
 
-    # Filter obvious non-article URLs lightly (keep generous)
     urls = {u for u in urls if u.startswith("http")}
     return sorted(urls)
 
+# Extract article URLs from RSS feed
 def get_rss_urls(rss_url: str):
     feed = feedparser.parse(rss_url)
     return [entry.link for entry in feed.entries if hasattr(entry, "link")]

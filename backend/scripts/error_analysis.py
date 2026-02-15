@@ -1,10 +1,3 @@
-"""
-Error Analysis Tool for CLIR System
-
-Analyzes retrieval failures across translation, NER, semantic/lexical,
-cross-script, and code-switching categories.
-"""
-
 import argparse
 import json
 import os
@@ -13,7 +6,7 @@ from typing import List, Dict, Any, Tuple, Optional
 from pathlib import Path
 from datetime import datetime
 
-# Add parent directory to path for imports
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from clir.query_retrieval import QueryRetrievalEngine
@@ -22,26 +15,22 @@ from clir.evaluation import RankingAndScoringEngine
 
 
 class ErrorAnalyzer:
-    """Analyzes retrieval errors and successes."""
     
     def __init__(self):
         self.retrieval_engine = QueryRetrievalEngine()
         self.query_processor = QueryProcessor()
         self.ranking_engine = RankingAndScoringEngine()
     
+    # Detect translation issues by comparing original and translated query results
     def analyze_translation_failures(self, query: str) -> Optional[Dict[str, Any]]:
-        """Analyze translation-related failures."""
         result = self.query_processor.process(query)
         
-        # Check if translation happened
         if not result.translated_query:
             return None
         
-        # Compare original and translated query
         original_lang = result.detected_language
         translated_query = result.translated_query
         
-        # Get retrieval results for both original and translated
         original_results = self.ranking_engine.rank(
             user_query=query,
             model_name="hybrid",
@@ -54,13 +43,12 @@ class ErrorAnalyzer:
             top_k=10
         )
         
-        # Check if translation changed meaning significantly
         original_top_urls = {doc.url for doc in original_results.ranked_documents[:5]}
         translated_top_urls = {doc.url for doc in translated_results.ranked_documents[:5]}
         
         overlap = len(original_top_urls & translated_top_urls)
         
-        if overlap < 2:  # Low overlap suggests translation issue
+        if overlap < 2:  
             return {
                 "category": "Translation Failure",
                 "query": query,
@@ -78,8 +66,8 @@ class ErrorAnalyzer:
         
         return None
     
+    # Check if named entities are properly matched in retrieved documents
     def analyze_ner_mismatch(self, query: str) -> Optional[Dict[str, Any]]:
-        """Analyze Named Entity Recognition and matching issues."""
         result = self.query_processor.process(query)
         
         # Extract named entities
@@ -107,7 +95,7 @@ class ErrorAnalyzer:
                     entity_found_count += 1
                     break
         
-        if entity_found_count < 2:  # Entities not found in top results
+        if entity_found_count < 2: 
             return {
                 "category": "Named Entity Mismatch",
                 "query": query,
@@ -136,8 +124,8 @@ class ErrorAnalyzer:
         
         return None
     
+    # Compare effectiveness of lexical vs semantic retrieval models
     def analyze_semantic_vs_lexical(self, query: str) -> Optional[Dict[str, Any]]:
-        """Compare semantic vs lexical retrieval models."""
         # Get results from different models
         lexical_result = self.ranking_engine.rank(
             user_query=query,
@@ -186,25 +174,22 @@ class ErrorAnalyzer:
         
         return None
     
+    # Identify issues with mixed Bengali and English script queries
     def analyze_cross_script_ambiguity(self, query: str) -> Optional[Dict[str, Any]]:
-        """Analyze cross-script transliteration and ambiguity issues."""
         result = self.query_processor.process(query)
         
-        # Check if query contains mixed scripts or transliteration
         has_bengali = any(ord(c) >= 0x0980 and ord(c) <= 0x09FF for c in query)
         has_english = any(("A" <= c <= "Z") or ("a" <= c <= "z") for c in query)
         
         if not (has_bengali and has_english):
             return None
         
-        # Check retrieval results
         retrieval_result = self.ranking_engine.rank(
             user_query=query,
             model_name="hybrid",
             top_k=10
         )
         
-        # Analyze if results match both scripts
         top_docs = retrieval_result.ranked_documents[:5]
         bn_matches = 0
         en_matches = 0
@@ -241,22 +226,21 @@ class ErrorAnalyzer:
         
         return None
     
+    # Detect code-switching issues in mixed-language queries
     def analyze_code_switching(self, query: str) -> Optional[Dict[str, Any]]:
-        """Analyze code-switching (mixing languages in query)."""
         result = self.query_processor.process(query)
         
-        # Check if query is mixed
+
         if result.detected_language != "mixed":
             return None
         
-        # Get retrieval results
         retrieval_result = self.ranking_engine.rank(
             user_query=query,
             model_name="hybrid",
             top_k=10
         )
         
-        # Check if results span both languages
+
         top_docs = retrieval_result.ranked_documents[:5]
         bn_docs = [doc for doc in top_docs if doc.language == "bn"]
         en_docs = [doc for doc in top_docs if doc.language == "en"]
@@ -289,8 +273,8 @@ class ErrorAnalyzer:
         
         return None
     
+    # Run all analysis methods on a query
     def analyze_query(self, query: str) -> List[Dict[str, Any]]:
-        """Run all analysis categories on a query."""
         findings = []
         
         # Translation failures
@@ -320,10 +304,8 @@ class ErrorAnalyzer:
         
         return findings
 
-
+# Generate markdown report from analysis findings
 def generate_report(findings: List[Dict[str, Any]], output_path: str) -> None:
-    """Generate a markdown report from findings."""
-    # Group by category
     by_category = {}
     for finding in findings:
         category = finding["category"]
@@ -342,7 +324,6 @@ def generate_report(findings: List[Dict[str, Any]], output_path: str) -> None:
             f.write(f"- **{category}**: {len(items)} case(s)\n")
         f.write("\n---\n\n")
         
-        # Detailed findings by category
         for category in [
             "Translation Failure",
             "Named Entity Mismatch",
@@ -398,7 +379,7 @@ def generate_report(findings: List[Dict[str, Any]], output_path: str) -> None:
     
     print(f"Report generated: {output_path}")
 
-
+# Main entry point for error analysis CLI
 def main():
     parser = argparse.ArgumentParser(description="Error Analysis Tool for CLIR System")
     parser.add_argument(
@@ -450,7 +431,6 @@ def main():
         print("\nNo issues found in the analyzed queries.")
         return
     
-    # Generate report
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     generate_report(all_findings, args.output)
     

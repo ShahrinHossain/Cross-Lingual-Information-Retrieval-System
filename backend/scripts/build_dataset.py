@@ -6,7 +6,7 @@ from crawler.url_discovery import get_sitemap_urls
 from crawler.article_extractor import fetch_and_extract
 from crawler.validate_and_save import to_record, append_jsonl
 
-CRAWL_DELAY = 1.0  # polite delay
+CRAWL_DELAY = 1.0  
 
 TOPIC_KEYWORDS = {
     "sports": ["sport", "match", "tournament", "goal", "cricket", "football", "বিশ্বকাপ", "ম্যাচ", "খেলা"],
@@ -32,6 +32,7 @@ SKIP_SUBSTRINGS = (
     "/search/",
 )
 
+# Check if URL should be skipped based on extension or path patterns
 def should_skip_url(url: str) -> bool:
     u = url.lower().split("?", 1)[0] 
 
@@ -45,10 +46,8 @@ def should_skip_url(url: str) -> bool:
             return True
     return False
 
-
-
+# Load previously crawled URLs from JSONL file
 def load_existing_urls(jsonl_path: str) -> set:
-    """Load URLs already saved in a jsonl file."""
     urls = set()
     if not os.path.exists(jsonl_path):
         return urls
@@ -61,7 +60,7 @@ def load_existing_urls(jsonl_path: str) -> set:
                 continue
     return urls
 
-
+# Extract topic from URL path segments
 def topic_from_url(url: str) -> str:
     parts = url.split("/")
     topic = parts[3].lower() if len(parts) > 3 else "other"
@@ -73,13 +72,8 @@ def topic_from_url(url: str) -> str:
 
     return topic
 
-
+# Detect article topic using keywords and URL patterns
 def detect_topic(title: str, body: str, url: str) -> str:
-    """
-    Hybrid topic detection:
-    1) Use URL-derived topic if it looks meaningful.
-    2) Otherwise fallback to keyword matching on title+body.
-    """
     url_topic = topic_from_url(url)
     if url_topic not in GENERIC_URL_TOPICS and len(url_topic) > 2:
         return url_topic
@@ -99,11 +93,8 @@ def detect_topic(title: str, body: str, url: str) -> str:
 
     return best_topic
 
+# Convert document to record forcing English language
 def to_record_force_en(doc):
-    """
-    Force an English record for Daily New Nation, bypassing language checks.
-    Keeps a minimal sanity check to avoid empty/junk pages.
-    """
     title = (doc.get("title") or "").strip()
     body = (doc.get("body") or "").strip()
     url = doc.get("url")
@@ -118,8 +109,7 @@ def to_record_force_en(doc):
         "url": url,
      }
 
-
-
+# Crawl site and build dataset up to specified limit
 def build_for_site(site_base: str, out_path: str, expected_language: str, limit: int):
     urls = get_sitemap_urls(site_base)
 
@@ -159,17 +149,17 @@ def build_for_site(site_base: str, out_path: str, expected_language: str, limit:
 
     return kept
 
+# Main crawler execution for Bangla and English news sites
 def main():
-    # You should load these from yaml later; hardcoding is OK for first run.
     bn_sites = [
         "https://bangla.bdnews24.com",
-        # "https://www.prothomalo.com",
-        # "https://banglatribune.com",
-        # "https://www.dhakapost.com",
+        "https://www.prothomalo.com",
+        "https://banglatribune.com",
+        "https://www.dhakapost.com",
     ]
     en_sites = [
-        # "https://www.dhakatribune.com",
-        # "https://www.thedailystar.net",
+        "https://www.dhakatribune.com",
+        "https://www.thedailystar.net",
         "https://www.newagebd.net",
         "https://www.banglanews24.com",
         "https://www.dailynewnation.com",
@@ -183,7 +173,6 @@ def main():
     bn_target = 2500
     en_target = 2500
 
-    # Distribute quota across 5 sites (500 each). You can adjust dynamically.
     quota_per_site = 10
 
     total_bn = 0
@@ -204,4 +193,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

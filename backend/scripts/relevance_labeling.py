@@ -1,10 +1,3 @@
-"""
-Relevance Labeling Tool for CLIR Evaluation
-
-Manually label query-document pairs as relevant/not relevant.
-Outputs CSV format for evaluation.
-"""
-
 import argparse
 import csv
 import json
@@ -18,9 +11,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from clir.query_retrieval import QueryRetrievalEngine
 from clir.evaluation import RankingAndScoringEngine
 
-
+# Load queries from text file
 def load_queries_from_file(file_path: str) -> List[str]:
-    """Load queries from a text file (one per line)."""
     queries = []
     with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
@@ -29,9 +21,8 @@ def load_queries_from_file(file_path: str) -> List[str]:
                 queries.append(line)
     return queries
 
-
+# Load previously labeled query-document pairs from CSV
 def load_existing_labels(csv_path: str) -> Dict[str, Dict[str, str]]:
-    """Load existing labels from CSV to avoid re-labeling."""
     labels = {}
     if not os.path.exists(csv_path):
         return labels
@@ -43,10 +34,9 @@ def load_existing_labels(csv_path: str) -> Dict[str, Dict[str, str]]:
             labels[key] = row
     return labels
 
-
+# Append a single label to CSV file
 def save_label(csv_path: str, query: str, doc_url: str, language: str, 
                relevant: str, annotator: str) -> None:
-    """Append a label to the CSV file."""
     file_exists = os.path.exists(csv_path)
     
     with open(csv_path, "a", encoding="utf-8", newline="") as f:
@@ -64,10 +54,9 @@ def save_label(csv_path: str, query: str, doc_url: str, language: str,
             "annotator": annotator,
         })
 
-
+# Interactive labeling mode with query-by-query workflow
 def interactive_labeling(queries: List[str], output_csv: str, annotator: str, 
                          top_k: int = 20) -> None:
-    """Interactive labeling session."""
     engine = RankingAndScoringEngine()
     existing_labels = load_existing_labels(output_csv)
     
@@ -80,7 +69,6 @@ def interactive_labeling(queries: List[str], output_csv: str, annotator: str,
         print(f"\n[{query_idx}/{len(queries)}] Query: {query}")
         print("-" * 90)
         
-        # Get ranked results
         result = engine.rank(user_query=query, top_k=top_k, model_name="hybrid")
         
         if not result.ranked_documents:
@@ -96,7 +84,6 @@ def interactive_labeling(queries: List[str], output_csv: str, annotator: str,
         for rank, doc in enumerate(result.ranked_documents, 1):
             key = f"{query}|||{doc.url}"
             
-            # Check if already labeled
             if key in existing_labels:
                 existing = existing_labels[key]
                 print(f"\n[{rank}] (Already labeled: {existing['relevant']})")
@@ -131,7 +118,6 @@ def interactive_labeling(queries: List[str], output_csv: str, annotator: str,
                 if response in ("s", "skip"):
                     break
                 if response in ("next",):
-                    # Skip remaining documents for this query
                     break
                 if response in ("y", "yes"):
                     save_label(output_csv, query, doc.url, doc.language, "yes", annotator)
@@ -151,10 +137,9 @@ def interactive_labeling(queries: List[str], output_csv: str, annotator: str,
     print("\nLabeling complete!")
     print(f"Labels saved to: {output_csv}")
 
-
+# Batch labeling mode collecting all documents first
 def batch_labeling(queries: List[str], output_csv: str, annotator: str, 
                   top_k: int = 20) -> None:
-    """Batch mode: show all queries and documents, then collect labels."""
     engine = RankingAndScoringEngine()
     existing_labels = load_existing_labels(output_csv)
     
@@ -200,9 +185,8 @@ def batch_labeling(queries: List[str], output_csv: str, annotator: str,
     print("\nLabeling complete!")
     print(f"Labels saved to: {output_csv}")
 
-
+# Convert labeled CSV to QRELS JSONL format
 def convert_to_qrels(csv_path: str, qrels_path: str) -> None:
-    """Convert labeled CSV to QRELS JSONL format."""
     query_to_urls: Dict[str, List[str]] = {}
     
     with open(csv_path, "r", encoding="utf-8") as f:
@@ -217,7 +201,6 @@ def convert_to_qrels(csv_path: str, qrels_path: str) -> None:
                     query_to_urls[query] = []
                 query_to_urls[query].append(doc_url)
     
-    # Write QRELS JSONL
     with open(qrels_path, "w", encoding="utf-8") as f:
         for query, urls in query_to_urls.items():
             qrel_entry = {
@@ -228,7 +211,7 @@ def convert_to_qrels(csv_path: str, qrels_path: str) -> None:
     
     print(f"Converted {len(query_to_urls)} queries to QRELS format: {qrels_path}")
 
-
+# Main entry point for relevance labeling tool
 def main():
     parser = argparse.ArgumentParser(description="Relevance Labeling Tool for CLIR")
     parser.add_argument(
@@ -267,7 +250,7 @@ def main():
     
     args = parser.parse_args()
     
-    # Convert to QRELS mode
+
     if args.convert_to_qrels:
         if not os.path.exists(args.output):
             print(f"Error: Labels file not found: {args.output}")
@@ -275,11 +258,9 @@ def main():
         convert_to_qrels(args.output, args.convert_to_qrels)
         return
     
-    # Load queries
     if args.queries:
         queries = load_queries_from_file(args.queries)
     else:
-        # Default queries for testing
         queries = [
             "good and bad news of sylhet",
             "recent flood in sylhet",
@@ -293,10 +274,8 @@ def main():
         print("Error: No queries to label.")
         return
     
-    # Ensure output directory exists
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     
-    # Run labeling
     if args.batch:
         batch_labeling(queries, args.output, args.annotator, args.top_k)
     else:

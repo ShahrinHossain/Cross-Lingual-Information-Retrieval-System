@@ -1,10 +1,3 @@
-"""
-Model Comparison Tool for Module C
-
-Compares BM25 vs TF-IDF, analyzes failure cases for synonyms/paraphrases,
-and compares all retrieval models.
-"""
-
 import argparse
 import json
 import os
@@ -19,13 +12,14 @@ from clir.evaluation import RankingAndScoringEngine
 
 
 class ModelComparator:
-    """Compares different retrieval models and analyzes failure cases."""
+   
     
     def __init__(self):
         self.ranking_engine = RankingAndScoringEngine()
     
+    # Compare BM25 and TF-IDF lexical retrieval models
     def compare_bm25_vs_tfidf(self, query: str, top_k: int = 10) -> Dict[str, Any]:
-        """Compare BM25 and TF-IDF performance."""
+    
         bm25_result = self.ranking_engine.rank(
             user_query=query,
             model_name="bm25",
@@ -59,8 +53,9 @@ class ModelComparator:
             "analysis": self._analyze_lexical_differences(bm25_result, tfidf_result, overlap)
         }
     
+    # Analyze differences between BM25 and TF-IDF results
     def _analyze_lexical_differences(self, bm25_result, tfidf_result, overlap: int) -> str:
-        """Analyze why BM25 and TF-IDF differ."""
+    
         analysis = []
         
         if overlap < len(bm25_result.ranked_documents) * 0.5:
@@ -83,22 +78,20 @@ class ModelComparator:
         
         return " ".join(analysis) if analysis else "Both models show similar results."
     
+    # Identify failure cases where lexical models underperform
     def analyze_failure_cases(self, query: str) -> Dict[str, Any]:
-        """Analyze failure cases for synonyms, paraphrases, and cross-script terms."""
         failures = {
             "synonym_failures": [],
             "paraphrase_failures": [],
             "cross_script_failures": []
         }
-        
-        # Test with lexical models
+
         lexical_result = self.ranking_engine.rank(
             user_query=query,
             model_name="bm25",
             top_k=10
         )
-        
-        # Test with semantic model
+
         semantic_result = self.ranking_engine.rank(
             user_query=query,
             model_name="semantic",
@@ -121,9 +114,7 @@ class ModelComparator:
                               "or paraphrases (e.g., 'education' vs 'learning', 'school'), lexical models "
                               "may miss relevant documents that semantic models can find."
             })
-        
-        # Check for cross-script issues
-        # If query is in one script but documents are in another
+
         query_has_bengali = any(ord(c) >= 0x0980 and ord(c) <= 0x09FF for c in query)
         query_has_english = any(("A" <= c <= "Z") or ("a" <= c <= "z") for c in query)
         
@@ -144,8 +135,8 @@ class ModelComparator:
         
         return failures
     
+    # Compare all available retrieval models
     def compare_all_models(self, query: str, top_k: int = 10) -> Dict[str, Any]:
-        """Compare all models: BM25, TF-IDF, Fuzzy, Semantic, Hybrid."""
         models = ["bm25", "tfidf", "fuzzy", "semantic", "hybrid"]
         results = {}
         
@@ -162,7 +153,6 @@ class ModelComparator:
                 "warning": result.warning_low_confidence
             }
         
-        # Calculate overlap between models
         model_urls = {model: {doc["url"] for doc in results[model]["top_5"]} for model in models}
         
         overlaps = {}
@@ -178,9 +168,8 @@ class ModelComparator:
             "recommendation": self._recommend_model(results, overlaps)
         }
     
+    # Recommend best model based on confidence scores
     def _recommend_model(self, results: Dict[str, Any], overlaps: Dict[str, int]) -> str:
-        """Recommend which model to use based on comparison."""
-        # Check if hybrid has best confidence
         hybrid_conf = results.get("hybrid", {}).get("top_confidence", 0)
         semantic_conf = results.get("semantic", {}).get("top_confidence", 0)
         lexical_conf = max(
@@ -195,7 +184,7 @@ class ModelComparator:
         else:
             return "Lexical model (BM25) recommended: good for exact keyword matching."
 
-
+# Generate markdown report from model comparison results
 def generate_comparison_report(comparisons: List[Dict[str, Any]], output_path: str) -> None:
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("# Module C — Model Comparison Report\n\n")
@@ -247,7 +236,7 @@ def generate_comparison_report(comparisons: List[Dict[str, Any]], output_path: s
     
     print(f"Comparison report generated: {output_path}")
 
-
+# Main entry point for model comparison CLI
 def main():
     parser = argparse.ArgumentParser(description="Model Comparison Tool for Module C")
     parser.add_argument(
@@ -304,7 +293,6 @@ def main():
             comp = comparator.compare_all_models(query)
             all_comparisons.append(comp)
     
-    # Generate report
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     generate_comparison_report(all_comparisons, args.output)
     

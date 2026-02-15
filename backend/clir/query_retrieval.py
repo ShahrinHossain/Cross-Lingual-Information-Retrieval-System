@@ -1,30 +1,3 @@
-# 
-# backend/clir/query_retrieval.py
-"""
-Module C — Retrieval Models (Core)
-
-This file:
-- Calls Module B QueryProcessor to get:
-    - retrieval_queries  ✅ (clean queries for retrieval)
-    - retrieval_keywords ✅ (important keywords only; stopwords removed)
-- Loads your dataset from:
-    backend/data/processed/en.jsonl
-    backend/data/processed/bn.jsonl
-- Implements and compares retrieval models:
-  Model 1: Lexical Retrieval (TF-IDF + BM25)
-  Model 2: Fuzzy/Transliteration Matching (RapidFuzz or difflib fallback)
-  Model 3: Semantic Matching (sentence-transformers embeddings)
-  Model 4: Hybrid Ranking (weighted fusion)
-
-✅ FIX INCLUDED:
-- Evidence matching now uses ONLY `retrieval_keywords` from Module B.
-- Words like: what/where/are/the/and will NOT be used for matching (because Module B removed them).
-- Also uses word-boundary matching for English (so partial matches don't trigger).
-
-Run:
-  cd backend
-  python -m clir.query_retrieval
-"""
 
 from __future__ import annotations
 
@@ -44,10 +17,6 @@ from sklearn.preprocessing import minmax_scale
 from clir.query_processor import QueryProcessor, QueryProcessingResult
 
 
-# -----------------------------
-# Paths / Config
-# -----------------------------
-
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKEND_DIR = os.path.dirname(CURRENT_DIR)
 
@@ -65,10 +34,6 @@ def _normalize_text_for_indexing(text: str) -> str:
     text = _WHITESPACE_RE.sub(" ", text)
     return text
 
-
-# -----------------------------
-# Data Structures
-# -----------------------------
 
 @dataclass
 class DocumentRecord:
@@ -96,14 +61,10 @@ class ScoredResult:
     score: float
     model: str
 
-    # ✅ Evidence fields for debugging/demo
     matched_keywords: List[str]
     evidence_lines: List[str]
 
 
-# -----------------------------
-# JSONL Loader
-# -----------------------------
 
 def load_jsonl_documents(jsonl_path: str, language_code: str, starting_doc_id: int = 0) -> List[DocumentRecord]:
     documents: List[DocumentRecord] = []
@@ -145,9 +106,6 @@ def load_jsonl_documents(jsonl_path: str, language_code: str, starting_doc_id: i
     return documents
 
 
-# -----------------------------
-# Model 1: TF-IDF
-# -----------------------------
 
 class TfidfRetriever:
     def __init__(self, documents: List[DocumentRecord]) -> None:
@@ -158,7 +116,7 @@ class TfidfRetriever:
             max_df=0.95,
             ngram_range=(1, 2),
         )
-        self.document_matrix = None  # scipy sparse
+        self.document_matrix = None  
 
     def build(self) -> None:
         corpus = [doc.full_text for doc in self.documents]
@@ -178,9 +136,6 @@ class TfidfRetriever:
         return top_indices.tolist(), scores
 
 
-# -----------------------------
-# Model 1: BM25 (Okapi)
-# -----------------------------
 
 class BM25Retriever:
     def __init__(self, documents: List[DocumentRecord], k1: float = 1.5, b: float = 0.75) -> None:
@@ -255,9 +210,6 @@ class BM25Retriever:
         return top_indices.tolist(), scores
 
 
-# -----------------------------
-# Model 2: Fuzzy / Transliteration Matching
-# -----------------------------
 
 class FuzzyRetriever:
     def __init__(self, documents: List[DocumentRecord]) -> None:
@@ -298,17 +250,13 @@ class FuzzyRetriever:
         return top_indices.tolist(), scores
 
 
-# -----------------------------
-# Model 3: Semantic Matching (sentence-transformers)
-# -----------------------------
-
 class SemanticRetriever:
     def __init__(
         self,
-        documents: List[DocumentRecord],  # ✅ FIXED - was missing!
-        embedding_model_name: str = "sentence-transformers/all-mpnet-base-v24",  # ✅ Changed to LaBSE
-        cache_dir: str = DEFAULT_EMBEDDING_CACHE_DIR,  # ✅ FIXED - was missing!
-        cache_key: str = "default",  # ✅ FIXED - was missing!
+        documents: List[DocumentRecord], 
+        embedding_model_name: str = "sentence-transformers/all-mpnet-base-v24", 
+        cache_dir: str = DEFAULT_EMBEDDING_CACHE_DIR,  
+        cache_key: str = "default", 
     ) -> None:
         self.documents = documents
         self.embedding_model_name = embedding_model_name
@@ -363,11 +311,6 @@ class SemanticRetriever:
         top_indices = np.argsort(-scores)[:top_k]
         return top_indices.tolist(), scores
 
-
-# -----------------------------
-# Hybrid Fusion
-# -----------------------------
-
 def _normalize_scores(scores: np.ndarray) -> np.ndarray:
     if scores.size == 0:
         return scores
@@ -397,15 +340,10 @@ def fuse_scores(
     return final_scores.astype(np.float32)
 
 
-# -----------------------------
-# Evidence Matching (FIXED)
-# -----------------------------
-
 _SENTENCE_SPLIT_RE = re.compile(r"(?:\r?\n)+|(?<=[\.\!\?।])\s+", flags=re.UNICODE)
 
 def _build_english_keyword_regex(keyword: str) -> re.Pattern:
     escaped = re.escape(keyword.lower())
-    # word boundary for English-like tokens
     return re.compile(rf"\b{escaped}\b", flags=re.IGNORECASE)
 
 def find_evidence_lines_for_document(
@@ -414,12 +352,6 @@ def find_evidence_lines_for_document(
     keywords: List[str],
     max_lines: int = 3,
 ) -> Tuple[List[str], List[str]]:
-    """
-    Returns (matched_keywords, evidence_lines)
-    ✅ Uses ONLY keywords provided (which come from Module B retrieval_keywords).
-    ✅ For English uses word boundary matching.
-    ✅ For Bangla uses substring match (works reasonably for BN script).
-    """
     keywords = [k.strip() for k in (keywords or []) if k and k.strip()]
     if not keywords:
         return [], []
@@ -439,7 +371,6 @@ def find_evidence_lines_for_document(
             if pattern.search(lower_title) or pattern.search(lower_body):
                 matched_keywords.append(kw)
     else:
-        # BN/mixed: simple substring
         for kw in keywords:
             if kw in title_text or kw in body_text:
                 matched_keywords.append(kw)
@@ -447,7 +378,6 @@ def find_evidence_lines_for_document(
     if not matched_keywords:
         return [], []
 
-    # Split into "sentences/lines" for evidence
     raw_parts = [p.strip() for p in _SENTENCE_SPLIT_RE.split(combined_text) if p and p.strip()]
     evidence_lines: List[str] = []
 
@@ -468,10 +398,6 @@ def find_evidence_lines_for_document(
 
     return matched_keywords, evidence_lines
 
-
-# -----------------------------
-# Query Retrieval Engine (Module C)
-# -----------------------------
 
 class QueryRetrievalEngine:
     """
@@ -671,15 +597,12 @@ class QueryRetrievalEngine:
         module_b_result: QueryProcessingResult = self.query_processor.process(user_query)
         module_b_dict = module_b_result.to_dict()
 
-        # ✅ FIX: Use ONLY retrieval_queries from Module B for retrieval
         retrieval_queries_bn = module_b_dict.get("retrieval_queries", {}).get("bn", []) or []
         retrieval_queries_en = module_b_dict.get("retrieval_queries", {}).get("en", []) or []
 
-        # ✅ FIX: Use ONLY retrieval_keywords from Module B for evidence matching
         retrieval_keywords_bn = module_b_dict.get("retrieval_keywords", {}).get("bn", []) or []
         retrieval_keywords_en = module_b_dict.get("retrieval_keywords", {}).get("en", []) or []
 
-        # Fallback safety (should rarely happen)
         if not retrieval_queries_bn:
             retrieval_queries_bn = module_b_result.expanded_queries.get("bn", [])[:1] or [module_b_result.normalized_query]
         if not retrieval_queries_en:
@@ -725,9 +648,6 @@ class QueryRetrievalEngine:
         return response
 
 
-# -----------------------------
-# Minimal CLI test
-# -----------------------------
 
 def _print_results_block(language_label: str, model_name: str, results: List[Dict[str, Any]]) -> None:
     print(f"\n--- {language_label} | {model_name.upper()} ---")
@@ -752,12 +672,10 @@ if __name__ == "__main__":
 
         output = retrieval_engine.search(user_query, top_k=10, model="all", include_debug=True)
 
-        # Print the keywords used (so you can verify no stopwords appear)
         module_b = output.get("module_b", {})
         print("\nUsed EN keywords:", module_b.get("retrieval_keywords", {}).get("en", []))
         print("Used BN keywords:", module_b.get("retrieval_keywords", {}).get("bn", []))
 
-        # Print results for each model simultaneously (EN + BN)
         for model_name in ["bm25", "tfidf", "fuzzy", "semantic", "hybrid"]:
             if model_name in output.get("en", {}):
                 _print_results_block("EN", model_name, output["en"][model_name])

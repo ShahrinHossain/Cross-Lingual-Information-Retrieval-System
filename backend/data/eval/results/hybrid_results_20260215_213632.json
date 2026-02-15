@@ -1,0 +1,1704 @@
+{
+  "model": "hybrid",
+  "timestamp": "20260215_213632",
+  "summary": {
+    "queries_count": 19.0,
+    "Precision@10": 0.9210526315789473,
+    "Recall@50": 1.0,
+    "nDCG@10": 0.9718572800059203,
+    "MRR": 1.0
+  },
+  "queries": [
+    {
+      "query": "good and bad news of sylhet",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "স্ট্রেঞ্জার থিংসে ডাস্টিনের যে বক্তৃতা ভাবাচ্ছে দর্শককে",
+          "url": "https://www.prothomalo.com/lifestyle/wau8tpqnw6",
+          "language": "bn",
+          "score": 0.7268072366714478,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "In fond memory of Nayak Raj Razzak | The Daily Star",
+          "url": "https://www.thedailystar.net/arts-entertainment/film/news/fond-memory-nayak-raj-razzak-1787911",
+          "language": "en",
+          "score": 0.6672773361206055,
+          "confidence": 0.8277760457118262
+        },
+        {
+          "rank": 3,
+          "title": "সাভারে পার্কিং করা বাসে আগুন",
+          "url": "https://www.dhakapost.com/country/416429",
+          "language": "bn",
+          "score": 0.650564432144165,
+          "confidence": 0.7794245049931783
+        },
+        {
+          "rank": 4,
+          "title": "মোটরসাইকেলের জন্য সেরা ৫টি ইঞ্জিন অয়েল",
+          "url": "https://www.dhakapost.com/automobile/351041",
+          "language": "bn",
+          "score": 0.6502367258071899,
+          "confidence": 0.7784764288049618
+        },
+        {
+          "rank": 5,
+          "title": "Films releasing this month | The Daily Star",
+          "url": "https://www.thedailystar.net/arts-entertainment/film/news/films-releasing-month-1796539",
+          "language": "en",
+          "score": 0.6447476148605347,
+          "confidence": 0.76259606643224
+        },
+        {
+          "rank": 6,
+          "title": "৮ নির্বাচন কমিশনারের পদত্যাগ, প্রশাসনিক ভবনে তালা",
+          "url": "https://www.prothomalo.com/bangladesh/district/49vny2gu4p",
+          "language": "bn",
+          "score": 0.6349941492080688,
+          "confidence": 0.7343786427991044
+        },
+        {
+          "rank": 7,
+          "title": "Remembering Khalilur Rahman Babar | The Daily Star",
+          "url": "https://www.thedailystar.net/arts-entertainment/film/news/remembering-khalilur-rahman-babar-1790887",
+          "language": "en",
+          "score": 0.6292489767074585,
+          "confidence": 0.7177574773517049
+        },
+        {
+          "rank": 8,
+          "title": "সিলেটে ‘ট্রেনের ধাক্কায়’ ডোবায় পড়া হাতি উদ্ধার, চলছে চিকিৎসা",
+          "url": "https://www.prothomalo.com/bangladesh/district/ab2nxt7vmn",
+          "language": "bn",
+          "score": 0.6153229475021362,
+          "confidence": 0.6774685503573651
+        },
+        {
+          "rank": 9,
+          "title": "বিপিএল: শেষের নাটকীয়তার পর ৫ রানে জিতল রাজশাহী",
+          "url": "https://www.prothomalo.com/sports/cricket/e34xxxgna1",
+          "language": "bn",
+          "score": 0.6079627275466919,
+          "confidence": 0.6561749454054345
+        },
+        {
+          "rank": 10,
+          "title": "অ্যানিমেশন ও রিয়েল আর্ট নিয়ে পড়তে চাই | কিশোর আলো",
+          "url": "https://www.kishoralo.com/letter/wk9mr4hnoj",
+          "language": "bn",
+          "score": 0.6049305200576782,
+          "confidence": 0.6474025678414213
+        }
+      ]
+    },
+    {
+      "query": "recent flood in sylhet",
+      "precision@10": 0.8,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "New Age | Flash flood kills dozens in Morocco town",
+          "url": "https://www.newagebd.net/post/africa/285287/flash-flood-kills-dozens-in-morocco-town",
+          "language": "en",
+          "score": 0.8275089263916016,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "সিলেটে মোটরসাইকেল দুর্ঘটনায় প্রাণ হারালেন মামাতো ও ফুফাতো ভাই",
+          "url": "https://www.prothomalo.com/bangladesh/district/9j08hex6dd",
+          "language": "bn",
+          "score": 0.7071254253387451,
+          "confidence": 0.7826176571033289
+        },
+        {
+          "rank": 3,
+          "title": "রেজওয়ানা চৌধুরী বন্যা গাইলেন ‘ইস্ট মিটস ওয়েস্ট’ আয়োজনে",
+          "url": "https://www.prothomalo.com/entertainment/song/x63clewi5h",
+          "language": "bn",
+          "score": 0.675366222858429,
+          "confidence": 0.7252685205246409
+        },
+        {
+          "rank": 4,
+          "title": "সিলেটে ‘ট্রেনের ধাক্কায়’ ডোবায় পড়া হাতি উদ্ধার, চলছে চিকিৎসা",
+          "url": "https://www.prothomalo.com/bangladesh/district/ab2nxt7vmn",
+          "language": "bn",
+          "score": 0.663967490196228,
+          "confidence": 0.7046852745607767
+        },
+        {
+          "rank": 5,
+          "title": "আমার পরিবারের প্রথম গ্র্যাজুয়েট হয়ে আমি সত্যিই গর্বিত— বন্যা উরাং",
+          "url": "https://trust.prothomalo.com/activities/oditiya/nnkxtuvhw5",
+          "language": "bn",
+          "score": 0.6510424613952637,
+          "confidence": 0.6813459214252756
+        },
+        {
+          "rank": 6,
+          "title": "বাংলাদেশে বিলুপ্তির ঝুঁকিতে উল্লুক",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/101741",
+          "language": "bn",
+          "score": 0.6417504549026489,
+          "confidence": 0.6645668933698546
+        },
+        {
+          "rank": 7,
+          "title": "New Age | Death toll in central Nigeria flood rises to 88",
+          "url": "https://www.newagebd.net/post/africa/266308/death-toll-in-central-nigeria-flood-rises-to-88",
+          "language": "en",
+          "score": 0.6397894024848938,
+          "confidence": 0.6610257256401704
+        },
+        {
+          "rank": 8,
+          "title": "হাওরে ৭০ শতাংশ বোরো ধান কাটা হয়েছে : কৃষি মন্ত্রণালয়",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/188836",
+          "language": "bn",
+          "score": 0.6344282627105713,
+          "confidence": 0.6513448548020058
+        },
+        {
+          "rank": 9,
+          "title": "New Age | Nigeria flood death toll rises to 151",
+          "url": "https://www.newagebd.net/post/africa/266363/nigeria-flood-death-toll-rises-to-151",
+          "language": "en",
+          "score": 0.6240590214729309,
+          "confidence": 0.6326206115744446
+        },
+        {
+          "rank": 10,
+          "title": "বাড়িভাড়ায় ভোগান্তি",
+          "url": "https://nagorik.prothomalo.com/reader/9t1edpppl7",
+          "language": "bn",
+          "score": 0.6146130561828613,
+          "confidence": 0.6155635726304254
+        }
+      ]
+    },
+    {
+      "query": "ঢাকার খবর",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "কেরানীগঞ্জে বহুতল ভবনে আগুন, নিয়ন্ত্রণে কাজ করছে ১৪ ইউনিট",
+          "url": "https://www.dhakapost.com/national/416253",
+          "language": "bn",
+          "score": 0.851860523223877,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "ভূমিকম্পে ঢাকার অন্তত চার ভবনে ধস-ফাটল, হতাহতের শঙ্কা",
+          "url": "https://www.dhakapost.com/national/411136",
+          "language": "bn",
+          "score": 0.8151201009750366,
+          "confidence": 0.919132962282878
+        },
+        {
+          "rank": 3,
+          "title": "ঢাকার যে ৬ জায়গায় গেলে পাবেন অথেনটিক নেহারি",
+          "url": "https://www.haal.fashion/food/4idfj5weyn",
+          "language": "bn",
+          "score": 0.7721225023269653,
+          "confidence": 0.8244936462709613
+        },
+        {
+          "rank": 4,
+          "title": "মেস থেকে জগন্নাথ বিশ্ববিদ্যালয়ের শিক্ষার্থীর ঝুলন্ত মরদেহ উদ্ধার",
+          "url": "https://www.prothomalo.com/bangladesh/w0luthx6ux",
+          "language": "bn",
+          "score": 0.7638117074966431,
+          "confidence": 0.8062012773250887
+        },
+        {
+          "rank": 5,
+          "title": "সাভারে পার্কিং করা বাসে আগুন",
+          "url": "https://www.dhakapost.com/country/416429",
+          "language": "bn",
+          "score": 0.7483102083206177,
+          "confidence": 0.7720819003062481
+        },
+        {
+          "rank": 6,
+          "title": "পুরান ঢাকায় জুতার কারখানায় আগুন, নিভলো ৩০ মিনিটে",
+          "url": "https://www.banglatribune.com/others/930344/%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A6%BE%E0%A6%A8-%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE%E0%A7%9F-%E0%A6%9C%E0%A7%81%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%96%E0%A6%BE%E0%A6%A8%E0%A6%BE%E0%A7%9F-%E0%A6%86%E0%A6%97%E0%A7%81%E0%A6%A8-%E0%A6%A8%E0%A6%BF%E0%A6%AD%E0%A6%B2-%E0%A7%A9%E0%A7%A6-%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A6%BF%E0%A6%9F%E0%A7%87",
+          "language": "bn",
+          "score": 0.7431434988975525,
+          "confidence": 0.7607097804389646
+        },
+        {
+          "rank": 7,
+          "title": "মশার কয়েল থেকে ঘরে আগুন, দেড় বছরের শিশুর মৃত্যু",
+          "url": "https://www.prothomalo.com/bangladesh/district/egr27w54r2",
+          "language": "bn",
+          "score": 0.7271096706390381,
+          "confidence": 0.7254187272836877
+        },
+        {
+          "rank": 8,
+          "title": "যুক্তরাষ্ট্র-বাংলাদেশ যৌথ উদ্যোগে ‘মানি লন্ডারিং বেঞ্চ বুক’ উদ্বোধন",
+          "url": "https://www.dhakapost.com/national/416323",
+          "language": "bn",
+          "score": 0.7222572565078735,
+          "confidence": 0.7147383830593814
+        },
+        {
+          "rank": 9,
+          "title": "পরিত্যক্ত ‘সাভার কমিউনিটি সেন্টার’ থেকে এবার ২ জনের পোড়া মরদেহ উদ্ধার",
+          "url": "https://www.prothomalo.com/bangladesh/district/eb6f3qmb0e",
+          "language": "bn",
+          "score": 0.7016890048980713,
+          "confidence": 0.669466895229444
+        },
+        {
+          "rank": 10,
+          "title": "দুই দিনের ব্যবধানে বাড্ডায় ফের যাত্রীবাহী বাসে আগুন",
+          "url": "https://www.dhakapost.com/national/416684",
+          "language": "bn",
+          "score": 0.6996029615402222,
+          "confidence": 0.6648754361069495
+        }
+      ]
+    },
+    {
+      "query": "বাংলাদেশের অর্থনীতি",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "ঢাকা কলেজের অর্থনীতি বিভাগের ১৮টি ব্যাচের পুনর্মিলনী",
+          "url": "https://www.dhakapost.com/campus/101993",
+          "language": "bn",
+          "score": 0.7268994450569153,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "ব্যবসা এবং অর্থনীতির উন্নয়নে খালেদা জিয়ার অবদান সুদূরপ্রসারী: সিমিন রহমান",
+          "url": "https://www.prothomalo.com/politics/7s1nxf2qgt",
+          "language": "bn",
+          "score": 0.7042005658149719,
+          "confidence": 0.935732290556457
+        },
+        {
+          "rank": 3,
+          "title": "শুধু সুষ্ঠু নির্বাচনই নয়, অর্থনৈতিক শৃঙ্খলাও ফেরাতে হবে",
+          "url": "https://www.prothomalo.com/opinion/column/hhi6dfbooe",
+          "language": "bn",
+          "score": 0.7031117677688599,
+          "confidence": 0.9326495587737825
+        },
+        {
+          "rank": 4,
+          "title": "সামুদ্রিক মৎস্যসম্পদ সুনীল অর্থনীতিকে সমৃদ্ধ করবে",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/58524",
+          "language": "bn",
+          "score": 0.6901495456695557,
+          "confidence": 0.895949406544177
+        },
+        {
+          "rank": 5,
+          "title": "Running on empty",
+          "url": "https://www.dhakatribune.com/opinion/op-ed/401315/running-on-empty",
+          "language": "en",
+          "score": 0.6531848311424255,
+          "confidence": 0.7912906034565175
+        },
+        {
+          "rank": 6,
+          "title": "New Age | Hop Lun launches #SHECAN initiative at factories",
+          "url": "https://www.newagebd.net/post/apparel/278570/hop-lun-launches-shecan-initiative-at-factories",
+          "language": "en",
+          "score": 0.6476913094520569,
+          "confidence": 0.7757367053078357
+        },
+        {
+          "rank": 7,
+          "title": "বৈজ্ঞানিকভাবে মাছ চাষ খাদ্য নিরাপত্তায় নতুন সম্ভাবনা সৃষ্টি করছে",
+          "url": "https://www.dhakapost.com/national/416707",
+          "language": "bn",
+          "score": 0.6352219581604004,
+          "confidence": 0.7404320262873468
+        },
+        {
+          "rank": 8,
+          "title": "অর্থনীতি আর ভঙ্গুর অবস্থায় নেই, রিজার্ভ এখন ৩২ বিলিয়ন: অর্থ উপদেষ্টা",
+          "url": "https://www.banglatribune.com/country/chitagong/930529/%E0%A6%85%E0%A6%A5%E0%A6%A8%E0%A7%80%E0%A6%A4%E0%A6%BF-%E0%A6%86%E0%A6%B0-%E0%A6%AD%E0%A6%99%E0%A7%8D%E0%A6%97%E0%A7%81%E0%A6%B0-%E0%A6%85%E0%A6%AC%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%BE%E0%A6%AF%E0%A6%BC-%E0%A6%A8%E0%A7%87%E0%A6%87-%E0%A6%B0%E0%A6%BF%E0%A6%9C%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%AD-%E0%A6%8F%E0%A6%96%E0%A6%A8-%E0%A7%A9%E0%A7%A8",
+          "language": "bn",
+          "score": 0.6338169574737549,
+          "confidence": 0.7364540247774546
+        },
+        {
+          "rank": 9,
+          "title": "সরকার হাদিকে রক্ষা করতে ব্যর্থ হয়েছে : আব্দুল্লাহ আল জাবের",
+          "url": "https://www.dhakapost.com/politics/416688",
+          "language": "bn",
+          "score": 0.6220849752426147,
+          "confidence": 0.7032370708833393
+        },
+        {
+          "rank": 10,
+          "title": "ইবিতে ‘ক্যাশলেস বাংলাদেশ উদ্যোগ’ শীর্ষক সেমিনার",
+          "url": "https://www.banglatribune.com/others/930580/%E0%A6%87%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A7%87-%E2%80%98%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B6%E0%A6%B2%E0%A7%87%E0%A6%B8-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6-%E0%A6%89%E0%A6%A6%E0%A7%8D%E0%A6%AF%E0%A7%8B%E0%A6%97%E2%80%99-%E0%A6%B6%E0%A7%80%E0%A6%B0%E0%A7%8D%E0%A6%B7%E0%A6%95-%E0%A6%B8%E0%A7%87%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A6%BE%E0%A6%B0",
+          "language": "bn",
+          "score": 0.6182601451873779,
+          "confidence": 0.6924077667559939
+        }
+      ]
+    },
+    {
+      "query": "education system in Bangladesh",
+      "precision@10": 0.8,
+      "recall@50": 1.0,
+      "ndcg@10": 0.9424720919083771,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "DMP Commissioner: Ethical education essential alongside academics",
+          "url": "https://www.dhakatribune.com/bangladesh/dhaka/401240/dmp-commissioner-ethical-education-essential",
+          "language": "en",
+          "score": 0.7691091299057007,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "সড়কে শৃঙ্খলা ও নাগরিক দায়িত্ব: যুক্তরাষ্ট্রের অভিজ্ঞতা ও বাংলাদেশের করণীয়",
+          "url": "https://nagorik.prothomalo.com/durporobash/w5kkb8vuij",
+          "language": "bn",
+          "score": 0.7537375092506409,
+          "confidence": 0.9600552890695511
+        },
+        {
+          "rank": 3,
+          "title": "মাদ্রাসায় চালু হচ্ছে ‘ব্যবসায় শিক্ষা’, অনুমোদন পেতে শর্ত প্রযোজ্য",
+          "url": "https://www.dhakapost.com/education/416625",
+          "language": "bn",
+          "score": 0.7161279320716858,
+          "confidence": 0.8623229990045304
+        },
+        {
+          "rank": 4,
+          "title": "ধর্মীয় শিক্ষক নিয়োগসহ ধর্মীয় মূল্যবোধ পরিপন্থি সব সিদ্ধান্ত বাতিলের দাবি",
+          "url": "https://www.dhakapost.com/national/404658",
+          "language": "bn",
+          "score": 0.7051964998245239,
+          "confidence": 0.8339165667247345
+        },
+        {
+          "rank": 5,
+          "title": "On Sonadia Island, education ends at grade five",
+          "url": "https://www.dhakatribune.com/bangladesh/nation/401233/on-sonadia-island-education-ends-at-grade-five",
+          "language": "en",
+          "score": 0.6649150252342224,
+          "confidence": 0.729241081005395
+        },
+        {
+          "rank": 6,
+          "title": "রাজনৈতিকভাবে বড় ধরনের উত্তরণের পথে রয়েছি: শিক্ষা উপদেষ্টা",
+          "url": "https://www.prothomalo.com/bangladesh/district/z5898naje5",
+          "language": "bn",
+          "score": 0.6601762771606445,
+          "confidence": 0.7169269648676809
+        },
+        {
+          "rank": 7,
+          "title": "বেগম রোকেয়ার আদর্শে নতুন বাংলাদেশ বিনির্মাণের আহ্বান",
+          "url": "https://www.dhakapost.com/national/415345",
+          "language": "bn",
+          "score": 0.654442548751831,
+          "confidence": 0.702027291698322
+        },
+        {
+          "rank": 8,
+          "title": "E-ticketing and counter-based bus system to return to Dhaka",
+          "url": "https://www.dhakatribune.com/bangladesh/dhaka/401376/e-ticketing-and-counter-based-bus-system-to-return",
+          "language": "en",
+          "score": 0.640238344669342,
+          "confidence": 0.6651162308021268
+        },
+        {
+          "rank": 9,
+          "title": "‘হ্যাঁ’ ভোটের পক্ষে সব শিক্ষা প্রতিষ্ঠানে প্রচারণা চালানোর সিদ্ধান্ত",
+          "url": "https://www.banglatribune.com/educations/930439/%E2%80%98%E0%A6%B9%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%81%E2%80%99-%E0%A6%AD%E0%A7%8B%E0%A6%9F%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A7%87-%E0%A6%B8%E0%A6%AC-%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%B7%E0%A7%8D%E0%A6%A0%E0%A6%BE%E0%A6%A8%E0%A7%87-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%A3%E0%A6%BE",
+          "language": "bn",
+          "score": 0.6296511888504028,
+          "confidence": 0.6376044356405709
+        },
+        {
+          "rank": 10,
+          "title": "টানা ১৯ ঘণ্টা উড়ে কানাডা পৌঁছাল বিমানের ফ্লাইট",
+          "url": "https://www.dhakapost.com/aviation/106752",
+          "language": "bn",
+          "score": 0.627364993095398,
+          "confidence": 0.6316635247494327
+        }
+      ]
+    },
+    {
+      "query": "শিক্ষা ব্যবস্থা",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "DMP Commissioner: Ethical education essential alongside academics",
+          "url": "https://www.dhakatribune.com/bangladesh/dhaka/401240/dmp-commissioner-ethical-education-essential",
+          "language": "en",
+          "score": 0.8013406991958618,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "On Sonadia Island, education ends at grade five",
+          "url": "https://www.dhakatribune.com/bangladesh/nation/401233/on-sonadia-island-education-ends-at-grade-five",
+          "language": "en",
+          "score": 0.7224501371383667,
+          "confidence": 0.8555774970395364
+        },
+        {
+          "rank": 3,
+          "title": "মাদ্রাসায় চালু হচ্ছে ‘ব্যবসায় শিক্ষা’, অনুমোদন পেতে শর্ত প্রযোজ্য",
+          "url": "https://www.dhakapost.com/education/416625",
+          "language": "bn",
+          "score": 0.6869499683380127,
+          "confidence": 0.7905884400477821
+        },
+        {
+          "rank": 4,
+          "title": "বিসিএস শিক্ষা সমিতির নির্বাচনে ঐক্য প্যানেলের ২৬ ইশতেহার",
+          "url": "https://www.dhakapost.com/campus/102025",
+          "language": "bn",
+          "score": 0.6693097949028015,
+          "confidence": 0.7582951221435038
+        },
+        {
+          "rank": 5,
+          "title": "New Age | Many secondary students yet to get all textbooks",
+          "url": "https://www.newagebd.net/post/education/288699/many-secondary-students-yet-to-get-all-textbooks",
+          "language": "en",
+          "score": 0.6608142256736755,
+          "confidence": 0.7427425472835343
+        },
+        {
+          "rank": 6,
+          "title": "জাবির রুটিন উপাচার্য অধ্যাপক নুরুল আলম",
+          "url": "https://www.dhakapost.com/campus/101179",
+          "language": "bn",
+          "score": 0.6447157859802246,
+          "confidence": 0.7132716334802858
+        },
+        {
+          "rank": 7,
+          "title": "রোহিঙ্গা নারীদের ৯৭ শতাংশই শিক্ষার বাইরে, বৈশ্বিক প্রতিনিধিদলের উদ্বেগ",
+          "url": "https://www.dhakapost.com/national/406932",
+          "language": "bn",
+          "score": 0.6362512111663818,
+          "confidence": 0.6977757991342162
+        },
+        {
+          "rank": 8,
+          "title": "এসএসসি পরীক্ষার ফরম পূরণের সময় বৃদ্ধি",
+          "url": "https://www.prothomalo.com/education/examination/pfcbez4b6q",
+          "language": "bn",
+          "score": 0.5865215063095093,
+          "confidence": 0.606737172211006
+        },
+        {
+          "rank": 9,
+          "title": "আদর্শ শিক্ষার পরিবেশ নিশ্চিত করবে নটর ডেম বিশ্ববিদ্যালয়",
+          "url": "https://www.dhakapost.com/campus/100346",
+          "language": "bn",
+          "score": 0.5812699794769287,
+          "confidence": 0.5971233650616466
+        },
+        {
+          "rank": 10,
+          "title": "খুবির ৭ শিক্ষার্থী পেলেন এএফ মুজিবুর রহমান ফাউন্ডেশন অ্যাওয়ার্ড",
+          "url": "https://www.dhakapost.com/campus/102998",
+          "language": "bn",
+          "score": 0.5682746171951294,
+          "confidence": 0.5733331587471368
+        }
+      ]
+    },
+    {
+      "query": "news about Dhaka",
+      "precision@10": 0.9,
+      "recall@50": 1.0,
+      "ndcg@10": 0.9196461703481416,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "কেরানীগঞ্জে বহুতল ভবনে আগুন, নিয়ন্ত্রণে কাজ করছে ১৪ ইউনিট",
+          "url": "https://www.dhakapost.com/national/416253",
+          "language": "bn",
+          "score": 0.8455266952514648,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "ভূমিকম্পে ঢাকার অন্তত চার ভবনে ধস-ফাটল, হতাহতের শঙ্কা",
+          "url": "https://www.dhakapost.com/national/411136",
+          "language": "bn",
+          "score": 0.8106107711791992,
+          "confidence": 0.9189069313509697
+        },
+        {
+          "rank": 3,
+          "title": "ঢাকার যে ৬ জায়গায় গেলে পাবেন অথেনটিক নেহারি",
+          "url": "https://www.haal.fashion/food/4idfj5weyn",
+          "language": "bn",
+          "score": 0.7683821320533752,
+          "confidence": 0.8208299071113141
+        },
+        {
+          "rank": 4,
+          "title": "মেস থেকে জগন্নাথ বিশ্ববিদ্যালয়ের শিক্ষার্থীর ঝুলন্ত মরদেহ উদ্ধার",
+          "url": "https://www.prothomalo.com/bangladesh/w0luthx6ux",
+          "language": "bn",
+          "score": 0.7620145082473755,
+          "confidence": 0.8060409485443748
+        },
+        {
+          "rank": 5,
+          "title": "সাভারে পার্কিং করা বাসে আগুন",
+          "url": "https://www.dhakapost.com/country/416429",
+          "language": "bn",
+          "score": 0.7436604499816895,
+          "confidence": 0.7634132092971746
+        },
+        {
+          "rank": 6,
+          "title": "পুরান ঢাকায় জুতার কারখানায় আগুন, নিভলো ৩০ মিনিটে",
+          "url": "https://www.banglatribune.com/others/930344/%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A6%BE%E0%A6%A8-%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE%E0%A7%9F-%E0%A6%9C%E0%A7%81%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%96%E0%A6%BE%E0%A6%A8%E0%A6%BE%E0%A7%9F-%E0%A6%86%E0%A6%97%E0%A7%81%E0%A6%A8-%E0%A6%A8%E0%A6%BF%E0%A6%AD%E0%A6%B2-%E0%A7%A9%E0%A7%A6-%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A6%BF%E0%A6%9F%E0%A7%87",
+          "language": "bn",
+          "score": 0.7340388298034668,
+          "confidence": 0.7410667663385799
+        },
+        {
+          "rank": 7,
+          "title": "যুক্তরাষ্ট্র-বাংলাদেশ যৌথ উদ্যোগে ‘মানি লন্ডারিং বেঞ্চ বুক’ উদ্বোধন",
+          "url": "https://www.dhakapost.com/national/416323",
+          "language": "bn",
+          "score": 0.721843957901001,
+          "confidence": 0.7127438847128204
+        },
+        {
+          "rank": 8,
+          "title": "মশার কয়েল থেকে ঘরে আগুন, দেড় বছরের শিশুর মৃত্যু",
+          "url": "https://www.prothomalo.com/bangladesh/district/egr27w54r2",
+          "language": "bn",
+          "score": 0.7204121351242065,
+          "confidence": 0.7094184420726221
+        },
+        {
+          "rank": 9,
+          "title": "পরিত্যক্ত ‘সাভার কমিউনিটি সেন্টার’ থেকে এবার ২ জনের পোড়া মরদেহ উদ্ধার",
+          "url": "https://www.prothomalo.com/bangladesh/district/eb6f3qmb0e",
+          "language": "bn",
+          "score": 0.698439359664917,
+          "confidence": 0.6583861456040533
+        },
+        {
+          "rank": 10,
+          "title": "দুই দিনের ব্যবধানে বাড্ডায় ফের যাত্রীবাহী বাসে আগুন",
+          "url": "https://www.dhakapost.com/national/416684",
+          "language": "bn",
+          "score": 0.6948269605636597,
+          "confidence": 0.6499962623032518
+        }
+      ]
+    },
+    {
+      "query": "সিলেটের বন্যা",
+      "precision@10": 0.3,
+      "recall@50": 1.0,
+      "ndcg@10": 0.7585866543655181,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "রেজওয়ানা চৌধুরী বন্যা গাইলেন ‘ইস্ট মিটস ওয়েস্ট’ আয়োজনে",
+          "url": "https://www.prothomalo.com/entertainment/song/x63clewi5h",
+          "language": "bn",
+          "score": 0.7719917297363281,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "সিলেটে ‘ট্রেনের ধাক্কায়’ ডোবায় পড়া হাতি উদ্ধার, চলছে চিকিৎসা",
+          "url": "https://www.prothomalo.com/bangladesh/district/ab2nxt7vmn",
+          "language": "bn",
+          "score": 0.7495898008346558,
+          "confidence": 0.9582221208213416
+        },
+        {
+          "rank": 3,
+          "title": "New Age | Death toll in central Nigeria flood rises to 88",
+          "url": "https://www.newagebd.net/post/africa/266308/death-toll-in-central-nigeria-flood-rises-to-88",
+          "language": "en",
+          "score": 0.7469373345375061,
+          "confidence": 0.953275474620732
+        },
+        {
+          "rank": 4,
+          "title": "বন্যাজয়ী বিনা ধান-১১ লাভবান করছে কৃষকদের",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/73454",
+          "language": "bn",
+          "score": 0.7266029715538025,
+          "confidence": 0.9153534472972397
+        },
+        {
+          "rank": 5,
+          "title": "আমার পরিবারের প্রথম গ্র্যাজুয়েট হয়ে আমি সত্যিই গর্বিত— বন্যা উরাং",
+          "url": "https://trust.prothomalo.com/activities/oditiya/nnkxtuvhw5",
+          "language": "bn",
+          "score": 0.6912515163421631,
+          "confidence": 0.8494256947762784
+        },
+        {
+          "rank": 6,
+          "title": "উন্নত আবহাওয়া ও বন্যার তথ্য ব্যবস্থা নিয়ে কর্মশালা অনুষ্ঠিত",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/65920",
+          "language": "bn",
+          "score": 0.6490215063095093,
+          "confidence": 0.770669965097749
+        },
+        {
+          "rank": 7,
+          "title": "বিপিএল: শেষের নাটকীয়তার পর ৫ রানে জিতল রাজশাহী",
+          "url": "https://www.prothomalo.com/sports/cricket/e34xxxgna1",
+          "language": "bn",
+          "score": 0.639845073223114,
+          "confidence": 0.7535566212219971
+        },
+        {
+          "rank": 8,
+          "title": "সিলেটে মোটরসাইকেল দুর্ঘটনায় প্রাণ হারালেন মামাতো ও ফুফাতো ভাই",
+          "url": "https://www.prothomalo.com/bangladesh/district/9j08hex6dd",
+          "language": "bn",
+          "score": 0.6316609382629395,
+          "confidence": 0.7382938372426013
+        },
+        {
+          "rank": 9,
+          "title": "New Age | Flash flood kills dozens in Morocco town",
+          "url": "https://www.newagebd.net/post/africa/285287/flash-flood-kills-dozens-in-morocco-town",
+          "language": "en",
+          "score": 0.6275893449783325,
+          "confidence": 0.730700628057108
+        },
+        {
+          "rank": 10,
+          "title": "৩০ লাখ টন চাল উদ্বৃত্ত থাকবে: ব্রি",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/1371",
+          "language": "bn",
+          "score": 0.6239652037620544,
+          "confidence": 0.723941882659574
+        }
+      ]
+    },
+    {
+      "query": "Bangladesh economy",
+      "precision@10": 0.8,
+      "recall@50": 1.0,
+      "ndcg@10": 0.9249372331423045,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "ঢাকা কলেজের অর্থনীতি বিভাগের ১৮টি ব্যাচের পুনর্মিলনী",
+          "url": "https://www.dhakapost.com/campus/101993",
+          "language": "bn",
+          "score": 0.7264281511306763,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "ব্যবসা এবং অর্থনীতির উন্নয়নে খালেদা জিয়ার অবদান সুদূরপ্রসারী: সিমিন রহমান",
+          "url": "https://www.prothomalo.com/politics/7s1nxf2qgt",
+          "language": "bn",
+          "score": 0.7033439874649048,
+          "confidence": 0.936612005580215
+        },
+        {
+          "rank": 3,
+          "title": "শুধু সুষ্ঠু নির্বাচনই নয়, অর্থনৈতিক শৃঙ্খলাও ফেরাতে হবে",
+          "url": "https://www.prothomalo.com/opinion/column/hhi6dfbooe",
+          "language": "bn",
+          "score": 0.7008825540542603,
+          "confidence": 0.9298530287527391
+        },
+        {
+          "rank": 4,
+          "title": "সামুদ্রিক মৎস্যসম্পদ সুনীল অর্থনীতিকে সমৃদ্ধ করবে",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/58524",
+          "language": "bn",
+          "score": 0.6887868642807007,
+          "confidence": 0.8966388509739394
+        },
+        {
+          "rank": 5,
+          "title": "বৈজ্ঞানিকভাবে মাছ চাষ খাদ্য নিরাপত্তায় নতুন সম্ভাবনা সৃষ্টি করছে",
+          "url": "https://www.dhakapost.com/national/416707",
+          "language": "bn",
+          "score": 0.6332494616508484,
+          "confidence": 0.7441358355317821
+        },
+        {
+          "rank": 6,
+          "title": "অর্থনীতি আর ভঙ্গুর অবস্থায় নেই, রিজার্ভ এখন ৩২ বিলিয়ন: অর্থ উপদেষ্টা",
+          "url": "https://www.banglatribune.com/country/chitagong/930529/%E0%A6%85%E0%A6%A5%E0%A6%A8%E0%A7%80%E0%A6%A4%E0%A6%BF-%E0%A6%86%E0%A6%B0-%E0%A6%AD%E0%A6%99%E0%A7%8D%E0%A6%97%E0%A7%81%E0%A6%B0-%E0%A6%85%E0%A6%AC%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%BE%E0%A6%AF%E0%A6%BC-%E0%A6%A8%E0%A7%87%E0%A6%87-%E0%A6%B0%E0%A6%BF%E0%A6%9C%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%AD-%E0%A6%8F%E0%A6%96%E0%A6%A8-%E0%A7%A9%E0%A7%A8",
+          "language": "bn",
+          "score": 0.6321074962615967,
+          "confidence": 0.7410000539297478
+        },
+        {
+          "rank": 7,
+          "title": "সরকার হাদিকে রক্ষা করতে ব্যর্থ হয়েছে : আব্দুল্লাহ আল জাবের",
+          "url": "https://www.dhakapost.com/politics/416688",
+          "language": "bn",
+          "score": 0.6216534376144409,
+          "confidence": 0.712293715645871
+        },
+        {
+          "rank": 8,
+          "title": "Running on empty",
+          "url": "https://www.dhakatribune.com/opinion/op-ed/401315/running-on-empty",
+          "language": "en",
+          "score": 0.6208779811859131,
+          "confidence": 0.7101643498834372
+        },
+        {
+          "rank": 9,
+          "title": "ইবিতে ‘ক্যাশলেস বাংলাদেশ উদ্যোগ’ শীর্ষক সেমিনার",
+          "url": "https://www.banglatribune.com/others/930580/%E0%A6%87%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A7%87-%E2%80%98%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B6%E0%A6%B2%E0%A7%87%E0%A6%B8-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6-%E0%A6%89%E0%A6%A6%E0%A7%8D%E0%A6%AF%E0%A7%8B%E0%A6%97%E2%80%99-%E0%A6%B6%E0%A7%80%E0%A6%B0%E0%A7%8D%E0%A6%B7%E0%A6%95-%E0%A6%B8%E0%A7%87%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A6%BE%E0%A6%B0",
+          "language": "bn",
+          "score": 0.6178014874458313,
+          "confidence": 0.7017164472064186
+        },
+        {
+          "rank": 10,
+          "title": "লিথুয়ানিয়ার রাষ্ট্রপতির কা‌ছে বাংলাদেশের রাষ্ট্রদূতের পরিচয়পত্র পেশ",
+          "url": "https://www.dhakapost.com/national/415858",
+          "language": "bn",
+          "score": 0.6127434968948364,
+          "confidence": 0.687827450339827
+        }
+      ]
+    },
+    {
+      "query": "রাজনীতি",
+      "precision@10": 0.9,
+      "recall@50": 1.0,
+      "ndcg@10": 0.9196461703481416,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Tarique Rahman: Politics must move beyond decades of blame",
+          "url": "https://www.dhakatribune.com/bangladesh/politics/401358/tarique-rahman-politics-must-move-beyond-decades",
+          "language": "en",
+          "score": 0.7999999523162842,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "অবৈধ আয়ে পরিচালিত রাজনীতি চাঁদাবাজিকে উৎসাহিত করে : পরিকল্পনা উপদেষ্টা",
+          "url": "https://www.dhakapost.com/national/414863",
+          "language": "bn",
+          "score": 0.7325881719589233,
+          "confidence": 0.8679671544682798
+        },
+        {
+          "rank": 3,
+          "title": "দেশের স্বাধীনতা ও সার্বভৌমত্বের প্রশ্নে আমরা আপসহীন : ডাকসু ভিপি",
+          "url": "https://www.dhakapost.com/campus/416520",
+          "language": "bn",
+          "score": 0.720746636390686,
+          "confidence": 0.8447742996252355
+        },
+        {
+          "rank": 4,
+          "title": "হাততালির রাজনীতিতে ভালো কথার জায়গা নেই",
+          "url": "https://www.prothomalo.com/opinion/column/i416ryj8t4",
+          "language": "bn",
+          "score": 0.7062268257141113,
+          "confidence": 0.8163357698898215
+        },
+        {
+          "rank": 5,
+          "title": "জুলাই গণঅভ্যুত্থানের পর বাংলাদেশের রাজনীতি কোন পথে?",
+          "url": "https://www.dhakapost.com/opinion/416554",
+          "language": "bn",
+          "score": 0.649031400680542,
+          "confidence": 0.7043126979794567
+        },
+        {
+          "rank": 6,
+          "title": "ক্ষমতায় গেলে মানুষ কেন বদলে যায়",
+          "url": "https://www.prothomalo.com/opinion/column/a51rnb2avm",
+          "language": "bn",
+          "score": 0.6108685731887817,
+          "confidence": 0.6295669090303732
+        },
+        {
+          "rank": 7,
+          "title": "সাংস্কৃতিক বৈচিত্র্য যেভাবে আমাদের অস্তিত্বের অংশ",
+          "url": "https://www.prothomalo.com/opinion/column/mcbpc4mxa8",
+          "language": "bn",
+          "score": 0.5740957856178284,
+          "confidence": 0.5575436550028403
+        },
+        {
+          "rank": 8,
+          "title": "এই সরকার পালানো দরকার, মমতাকে ইঙ্গিত করে মোদি",
+          "url": "https://www.banglatribune.com/foreign/asia/930348/%E0%A6%8F%E0%A6%87-%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0-%E0%A6%AA%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%A8%E0%A7%8B-%E0%A6%A6%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0-%E0%A6%AE%E0%A6%AE%E0%A6%A4%E0%A6%BE%E0%A6%95%E0%A7%87-%E0%A6%87%E0%A6%99%E0%A7%8D%E0%A6%97%E0%A6%BF%E0%A6%A4-%E0%A6%95%E0%A6%B0%E0%A7%87-%E0%A6%AE%E0%A7%8B%E0%A6%A6%E0%A6%BF",
+          "language": "bn",
+          "score": 0.565239429473877,
+          "confidence": 0.5401975784487213
+        },
+        {
+          "rank": 9,
+          "title": "গণ–অভ‍্যুত্থান–পরবর্তী নির্বাচনে নারীরা কোথায়",
+          "url": "https://www.prothomalo.com/opinion/column/442r4rkg9i",
+          "language": "bn",
+          "score": 0.5537866353988647,
+          "confidence": 0.5177661134585287
+        },
+        {
+          "rank": 10,
+          "title": "কর্তৃত্ববাদী ব্যবস্থা যেভাবে সামাজিক সম্পর্কগুলো বদলে দেয়",
+          "url": "https://www.prothomalo.com/opinion/column/vfmplmftsq",
+          "language": "bn",
+          "score": 0.553341269493103,
+          "confidence": 0.5168938189199658
+        }
+      ]
+    },
+    {
+      "query": "recent flood in sylhet",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "New Age | Flash flood kills dozens in Morocco town",
+          "url": "https://www.newagebd.net/post/africa/285287/flash-flood-kills-dozens-in-morocco-town",
+          "language": "en",
+          "score": 0.8275089263916016,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "সিলেটে মোটরসাইকেল দুর্ঘটনায় প্রাণ হারালেন মামাতো ও ফুফাতো ভাই",
+          "url": "https://www.prothomalo.com/bangladesh/district/9j08hex6dd",
+          "language": "bn",
+          "score": 0.7071254253387451,
+          "confidence": 0.7826176571033289
+        },
+        {
+          "rank": 3,
+          "title": "রেজওয়ানা চৌধুরী বন্যা গাইলেন ‘ইস্ট মিটস ওয়েস্ট’ আয়োজনে",
+          "url": "https://www.prothomalo.com/entertainment/song/x63clewi5h",
+          "language": "bn",
+          "score": 0.675366222858429,
+          "confidence": 0.7252685205246409
+        },
+        {
+          "rank": 4,
+          "title": "সিলেটে ‘ট্রেনের ধাক্কায়’ ডোবায় পড়া হাতি উদ্ধার, চলছে চিকিৎসা",
+          "url": "https://www.prothomalo.com/bangladesh/district/ab2nxt7vmn",
+          "language": "bn",
+          "score": 0.663967490196228,
+          "confidence": 0.7046852745607767
+        },
+        {
+          "rank": 5,
+          "title": "আমার পরিবারের প্রথম গ্র্যাজুয়েট হয়ে আমি সত্যিই গর্বিত— বন্যা উরাং",
+          "url": "https://trust.prothomalo.com/activities/oditiya/nnkxtuvhw5",
+          "language": "bn",
+          "score": 0.6510424613952637,
+          "confidence": 0.6813459214252756
+        },
+        {
+          "rank": 6,
+          "title": "বাংলাদেশে বিলুপ্তির ঝুঁকিতে উল্লুক",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/101741",
+          "language": "bn",
+          "score": 0.6417504549026489,
+          "confidence": 0.6645668933698546
+        },
+        {
+          "rank": 7,
+          "title": "New Age | Death toll in central Nigeria flood rises to 88",
+          "url": "https://www.newagebd.net/post/africa/266308/death-toll-in-central-nigeria-flood-rises-to-88",
+          "language": "en",
+          "score": 0.6397894024848938,
+          "confidence": 0.6610257256401704
+        },
+        {
+          "rank": 8,
+          "title": "হাওরে ৭০ শতাংশ বোরো ধান কাটা হয়েছে : কৃষি মন্ত্রণালয়",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/188836",
+          "language": "bn",
+          "score": 0.6344282627105713,
+          "confidence": 0.6513448548020058
+        },
+        {
+          "rank": 9,
+          "title": "New Age | Nigeria flood death toll rises to 151",
+          "url": "https://www.newagebd.net/post/africa/266363/nigeria-flood-death-toll-rises-to-151",
+          "language": "en",
+          "score": 0.6240590214729309,
+          "confidence": 0.6326206115744446
+        },
+        {
+          "rank": 10,
+          "title": "বাড়িভাড়ায় ভোগান্তি",
+          "url": "https://nagorik.prothomalo.com/reader/9t1edpppl7",
+          "language": "bn",
+          "score": 0.6146130561828613,
+          "confidence": 0.6155635726304254
+        }
+      ]
+    },
+    {
+      "query": "ঢাকার খবর",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "কেরানীগঞ্জে বহুতল ভবনে আগুন, নিয়ন্ত্রণে কাজ করছে ১৪ ইউনিট",
+          "url": "https://www.dhakapost.com/national/416253",
+          "language": "bn",
+          "score": 0.851860523223877,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "ভূমিকম্পে ঢাকার অন্তত চার ভবনে ধস-ফাটল, হতাহতের শঙ্কা",
+          "url": "https://www.dhakapost.com/national/411136",
+          "language": "bn",
+          "score": 0.8151201009750366,
+          "confidence": 0.919132962282878
+        },
+        {
+          "rank": 3,
+          "title": "ঢাকার যে ৬ জায়গায় গেলে পাবেন অথেনটিক নেহারি",
+          "url": "https://www.haal.fashion/food/4idfj5weyn",
+          "language": "bn",
+          "score": 0.7721225023269653,
+          "confidence": 0.8244936462709613
+        },
+        {
+          "rank": 4,
+          "title": "মেস থেকে জগন্নাথ বিশ্ববিদ্যালয়ের শিক্ষার্থীর ঝুলন্ত মরদেহ উদ্ধার",
+          "url": "https://www.prothomalo.com/bangladesh/w0luthx6ux",
+          "language": "bn",
+          "score": 0.7638117074966431,
+          "confidence": 0.8062012773250887
+        },
+        {
+          "rank": 5,
+          "title": "সাভারে পার্কিং করা বাসে আগুন",
+          "url": "https://www.dhakapost.com/country/416429",
+          "language": "bn",
+          "score": 0.7483102083206177,
+          "confidence": 0.7720819003062481
+        },
+        {
+          "rank": 6,
+          "title": "পুরান ঢাকায় জুতার কারখানায় আগুন, নিভলো ৩০ মিনিটে",
+          "url": "https://www.banglatribune.com/others/930344/%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A6%BE%E0%A6%A8-%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE%E0%A7%9F-%E0%A6%9C%E0%A7%81%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%96%E0%A6%BE%E0%A6%A8%E0%A6%BE%E0%A7%9F-%E0%A6%86%E0%A6%97%E0%A7%81%E0%A6%A8-%E0%A6%A8%E0%A6%BF%E0%A6%AD%E0%A6%B2-%E0%A7%A9%E0%A7%A6-%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A6%BF%E0%A6%9F%E0%A7%87",
+          "language": "bn",
+          "score": 0.7431434988975525,
+          "confidence": 0.7607097804389646
+        },
+        {
+          "rank": 7,
+          "title": "মশার কয়েল থেকে ঘরে আগুন, দেড় বছরের শিশুর মৃত্যু",
+          "url": "https://www.prothomalo.com/bangladesh/district/egr27w54r2",
+          "language": "bn",
+          "score": 0.7271096706390381,
+          "confidence": 0.7254187272836877
+        },
+        {
+          "rank": 8,
+          "title": "যুক্তরাষ্ট্র-বাংলাদেশ যৌথ উদ্যোগে ‘মানি লন্ডারিং বেঞ্চ বুক’ উদ্বোধন",
+          "url": "https://www.dhakapost.com/national/416323",
+          "language": "bn",
+          "score": 0.7222572565078735,
+          "confidence": 0.7147383830593814
+        },
+        {
+          "rank": 9,
+          "title": "পরিত্যক্ত ‘সাভার কমিউনিটি সেন্টার’ থেকে এবার ২ জনের পোড়া মরদেহ উদ্ধার",
+          "url": "https://www.prothomalo.com/bangladesh/district/eb6f3qmb0e",
+          "language": "bn",
+          "score": 0.7016890048980713,
+          "confidence": 0.669466895229444
+        },
+        {
+          "rank": 10,
+          "title": "দুই দিনের ব্যবধানে বাড্ডায় ফের যাত্রীবাহী বাসে আগুন",
+          "url": "https://www.dhakapost.com/national/416684",
+          "language": "bn",
+          "score": 0.6996029615402222,
+          "confidence": 0.6648754361069495
+        }
+      ]
+    },
+    {
+      "query": "বাংলাদেশের অর্থনীতি",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "ঢাকা কলেজের অর্থনীতি বিভাগের ১৮টি ব্যাচের পুনর্মিলনী",
+          "url": "https://www.dhakapost.com/campus/101993",
+          "language": "bn",
+          "score": 0.7268994450569153,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "ব্যবসা এবং অর্থনীতির উন্নয়নে খালেদা জিয়ার অবদান সুদূরপ্রসারী: সিমিন রহমান",
+          "url": "https://www.prothomalo.com/politics/7s1nxf2qgt",
+          "language": "bn",
+          "score": 0.7042005658149719,
+          "confidence": 0.935732290556457
+        },
+        {
+          "rank": 3,
+          "title": "শুধু সুষ্ঠু নির্বাচনই নয়, অর্থনৈতিক শৃঙ্খলাও ফেরাতে হবে",
+          "url": "https://www.prothomalo.com/opinion/column/hhi6dfbooe",
+          "language": "bn",
+          "score": 0.7031117677688599,
+          "confidence": 0.9326495587737825
+        },
+        {
+          "rank": 4,
+          "title": "সামুদ্রিক মৎস্যসম্পদ সুনীল অর্থনীতিকে সমৃদ্ধ করবে",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/58524",
+          "language": "bn",
+          "score": 0.6901495456695557,
+          "confidence": 0.895949406544177
+        },
+        {
+          "rank": 5,
+          "title": "Running on empty",
+          "url": "https://www.dhakatribune.com/opinion/op-ed/401315/running-on-empty",
+          "language": "en",
+          "score": 0.6531848311424255,
+          "confidence": 0.7912906034565175
+        },
+        {
+          "rank": 6,
+          "title": "New Age | Hop Lun launches #SHECAN initiative at factories",
+          "url": "https://www.newagebd.net/post/apparel/278570/hop-lun-launches-shecan-initiative-at-factories",
+          "language": "en",
+          "score": 0.6476913094520569,
+          "confidence": 0.7757367053078357
+        },
+        {
+          "rank": 7,
+          "title": "বৈজ্ঞানিকভাবে মাছ চাষ খাদ্য নিরাপত্তায় নতুন সম্ভাবনা সৃষ্টি করছে",
+          "url": "https://www.dhakapost.com/national/416707",
+          "language": "bn",
+          "score": 0.6352219581604004,
+          "confidence": 0.7404320262873468
+        },
+        {
+          "rank": 8,
+          "title": "অর্থনীতি আর ভঙ্গুর অবস্থায় নেই, রিজার্ভ এখন ৩২ বিলিয়ন: অর্থ উপদেষ্টা",
+          "url": "https://www.banglatribune.com/country/chitagong/930529/%E0%A6%85%E0%A6%A5%E0%A6%A8%E0%A7%80%E0%A6%A4%E0%A6%BF-%E0%A6%86%E0%A6%B0-%E0%A6%AD%E0%A6%99%E0%A7%8D%E0%A6%97%E0%A7%81%E0%A6%B0-%E0%A6%85%E0%A6%AC%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%BE%E0%A6%AF%E0%A6%BC-%E0%A6%A8%E0%A7%87%E0%A6%87-%E0%A6%B0%E0%A6%BF%E0%A6%9C%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%AD-%E0%A6%8F%E0%A6%96%E0%A6%A8-%E0%A7%A9%E0%A7%A8",
+          "language": "bn",
+          "score": 0.6338169574737549,
+          "confidence": 0.7364540247774546
+        },
+        {
+          "rank": 9,
+          "title": "সরকার হাদিকে রক্ষা করতে ব্যর্থ হয়েছে : আব্দুল্লাহ আল জাবের",
+          "url": "https://www.dhakapost.com/politics/416688",
+          "language": "bn",
+          "score": 0.6220849752426147,
+          "confidence": 0.7032370708833393
+        },
+        {
+          "rank": 10,
+          "title": "ইবিতে ‘ক্যাশলেস বাংলাদেশ উদ্যোগ’ শীর্ষক সেমিনার",
+          "url": "https://www.banglatribune.com/others/930580/%E0%A6%87%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A7%87-%E2%80%98%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B6%E0%A6%B2%E0%A7%87%E0%A6%B8-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6-%E0%A6%89%E0%A6%A6%E0%A7%8D%E0%A6%AF%E0%A7%8B%E0%A6%97%E2%80%99-%E0%A6%B6%E0%A7%80%E0%A6%B0%E0%A7%8D%E0%A6%B7%E0%A6%95-%E0%A6%B8%E0%A7%87%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A6%BE%E0%A6%B0",
+          "language": "bn",
+          "score": 0.6182601451873779,
+          "confidence": 0.6924077667559939
+        }
+      ]
+    },
+    {
+      "query": "education system in Bangladesh",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "DMP Commissioner: Ethical education essential alongside academics",
+          "url": "https://www.dhakatribune.com/bangladesh/dhaka/401240/dmp-commissioner-ethical-education-essential",
+          "language": "en",
+          "score": 0.7691091299057007,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "সড়কে শৃঙ্খলা ও নাগরিক দায়িত্ব: যুক্তরাষ্ট্রের অভিজ্ঞতা ও বাংলাদেশের করণীয়",
+          "url": "https://nagorik.prothomalo.com/durporobash/w5kkb8vuij",
+          "language": "bn",
+          "score": 0.7537375092506409,
+          "confidence": 0.9600552890695511
+        },
+        {
+          "rank": 3,
+          "title": "মাদ্রাসায় চালু হচ্ছে ‘ব্যবসায় শিক্ষা’, অনুমোদন পেতে শর্ত প্রযোজ্য",
+          "url": "https://www.dhakapost.com/education/416625",
+          "language": "bn",
+          "score": 0.7161279320716858,
+          "confidence": 0.8623229990045304
+        },
+        {
+          "rank": 4,
+          "title": "ধর্মীয় শিক্ষক নিয়োগসহ ধর্মীয় মূল্যবোধ পরিপন্থি সব সিদ্ধান্ত বাতিলের দাবি",
+          "url": "https://www.dhakapost.com/national/404658",
+          "language": "bn",
+          "score": 0.7051964998245239,
+          "confidence": 0.8339165667247345
+        },
+        {
+          "rank": 5,
+          "title": "On Sonadia Island, education ends at grade five",
+          "url": "https://www.dhakatribune.com/bangladesh/nation/401233/on-sonadia-island-education-ends-at-grade-five",
+          "language": "en",
+          "score": 0.6649150252342224,
+          "confidence": 0.729241081005395
+        },
+        {
+          "rank": 6,
+          "title": "রাজনৈতিকভাবে বড় ধরনের উত্তরণের পথে রয়েছি: শিক্ষা উপদেষ্টা",
+          "url": "https://www.prothomalo.com/bangladesh/district/z5898naje5",
+          "language": "bn",
+          "score": 0.6601762771606445,
+          "confidence": 0.7169269648676809
+        },
+        {
+          "rank": 7,
+          "title": "বেগম রোকেয়ার আদর্শে নতুন বাংলাদেশ বিনির্মাণের আহ্বান",
+          "url": "https://www.dhakapost.com/national/415345",
+          "language": "bn",
+          "score": 0.654442548751831,
+          "confidence": 0.702027291698322
+        },
+        {
+          "rank": 8,
+          "title": "E-ticketing and counter-based bus system to return to Dhaka",
+          "url": "https://www.dhakatribune.com/bangladesh/dhaka/401376/e-ticketing-and-counter-based-bus-system-to-return",
+          "language": "en",
+          "score": 0.640238344669342,
+          "confidence": 0.6651162308021268
+        },
+        {
+          "rank": 9,
+          "title": "‘হ্যাঁ’ ভোটের পক্ষে সব শিক্ষা প্রতিষ্ঠানে প্রচারণা চালানোর সিদ্ধান্ত",
+          "url": "https://www.banglatribune.com/educations/930439/%E2%80%98%E0%A6%B9%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%81%E2%80%99-%E0%A6%AD%E0%A7%8B%E0%A6%9F%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A7%87-%E0%A6%B8%E0%A6%AC-%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%B7%E0%A7%8D%E0%A6%A0%E0%A6%BE%E0%A6%A8%E0%A7%87-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%A3%E0%A6%BE",
+          "language": "bn",
+          "score": 0.6296511888504028,
+          "confidence": 0.6376044356405709
+        },
+        {
+          "rank": 10,
+          "title": "টানা ১৯ ঘণ্টা উড়ে কানাডা পৌঁছাল বিমানের ফ্লাইট",
+          "url": "https://www.dhakapost.com/aviation/106752",
+          "language": "bn",
+          "score": 0.627364993095398,
+          "confidence": 0.6316635247494327
+        }
+      ]
+    },
+    {
+      "query": "শিক্ষা ব্যবস্থা",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "DMP Commissioner: Ethical education essential alongside academics",
+          "url": "https://www.dhakatribune.com/bangladesh/dhaka/401240/dmp-commissioner-ethical-education-essential",
+          "language": "en",
+          "score": 0.8013406991958618,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "On Sonadia Island, education ends at grade five",
+          "url": "https://www.dhakatribune.com/bangladesh/nation/401233/on-sonadia-island-education-ends-at-grade-five",
+          "language": "en",
+          "score": 0.7224501371383667,
+          "confidence": 0.8555774970395364
+        },
+        {
+          "rank": 3,
+          "title": "মাদ্রাসায় চালু হচ্ছে ‘ব্যবসায় শিক্ষা’, অনুমোদন পেতে শর্ত প্রযোজ্য",
+          "url": "https://www.dhakapost.com/education/416625",
+          "language": "bn",
+          "score": 0.6869499683380127,
+          "confidence": 0.7905884400477821
+        },
+        {
+          "rank": 4,
+          "title": "বিসিএস শিক্ষা সমিতির নির্বাচনে ঐক্য প্যানেলের ২৬ ইশতেহার",
+          "url": "https://www.dhakapost.com/campus/102025",
+          "language": "bn",
+          "score": 0.6693097949028015,
+          "confidence": 0.7582951221435038
+        },
+        {
+          "rank": 5,
+          "title": "New Age | Many secondary students yet to get all textbooks",
+          "url": "https://www.newagebd.net/post/education/288699/many-secondary-students-yet-to-get-all-textbooks",
+          "language": "en",
+          "score": 0.6608142256736755,
+          "confidence": 0.7427425472835343
+        },
+        {
+          "rank": 6,
+          "title": "জাবির রুটিন উপাচার্য অধ্যাপক নুরুল আলম",
+          "url": "https://www.dhakapost.com/campus/101179",
+          "language": "bn",
+          "score": 0.6447157859802246,
+          "confidence": 0.7132716334802858
+        },
+        {
+          "rank": 7,
+          "title": "রোহিঙ্গা নারীদের ৯৭ শতাংশই শিক্ষার বাইরে, বৈশ্বিক প্রতিনিধিদলের উদ্বেগ",
+          "url": "https://www.dhakapost.com/national/406932",
+          "language": "bn",
+          "score": 0.6362512111663818,
+          "confidence": 0.6977757991342162
+        },
+        {
+          "rank": 8,
+          "title": "এসএসসি পরীক্ষার ফরম পূরণের সময় বৃদ্ধি",
+          "url": "https://www.prothomalo.com/education/examination/pfcbez4b6q",
+          "language": "bn",
+          "score": 0.5865215063095093,
+          "confidence": 0.606737172211006
+        },
+        {
+          "rank": 9,
+          "title": "আদর্শ শিক্ষার পরিবেশ নিশ্চিত করবে নটর ডেম বিশ্ববিদ্যালয়",
+          "url": "https://www.dhakapost.com/campus/100346",
+          "language": "bn",
+          "score": 0.5812699794769287,
+          "confidence": 0.5971233650616466
+        },
+        {
+          "rank": 10,
+          "title": "খুবির ৭ শিক্ষার্থী পেলেন এএফ মুজিবুর রহমান ফাউন্ডেশন অ্যাওয়ার্ড",
+          "url": "https://www.dhakapost.com/campus/102998",
+          "language": "bn",
+          "score": 0.5682746171951294,
+          "confidence": 0.5733331587471368
+        }
+      ]
+    },
+    {
+      "query": "news about Dhaka",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "কেরানীগঞ্জে বহুতল ভবনে আগুন, নিয়ন্ত্রণে কাজ করছে ১৪ ইউনিট",
+          "url": "https://www.dhakapost.com/national/416253",
+          "language": "bn",
+          "score": 0.8455266952514648,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "ভূমিকম্পে ঢাকার অন্তত চার ভবনে ধস-ফাটল, হতাহতের শঙ্কা",
+          "url": "https://www.dhakapost.com/national/411136",
+          "language": "bn",
+          "score": 0.8106107711791992,
+          "confidence": 0.9189069313509697
+        },
+        {
+          "rank": 3,
+          "title": "ঢাকার যে ৬ জায়গায় গেলে পাবেন অথেনটিক নেহারি",
+          "url": "https://www.haal.fashion/food/4idfj5weyn",
+          "language": "bn",
+          "score": 0.7683821320533752,
+          "confidence": 0.8208299071113141
+        },
+        {
+          "rank": 4,
+          "title": "মেস থেকে জগন্নাথ বিশ্ববিদ্যালয়ের শিক্ষার্থীর ঝুলন্ত মরদেহ উদ্ধার",
+          "url": "https://www.prothomalo.com/bangladesh/w0luthx6ux",
+          "language": "bn",
+          "score": 0.7620145082473755,
+          "confidence": 0.8060409485443748
+        },
+        {
+          "rank": 5,
+          "title": "সাভারে পার্কিং করা বাসে আগুন",
+          "url": "https://www.dhakapost.com/country/416429",
+          "language": "bn",
+          "score": 0.7436604499816895,
+          "confidence": 0.7634132092971746
+        },
+        {
+          "rank": 6,
+          "title": "পুরান ঢাকায় জুতার কারখানায় আগুন, নিভলো ৩০ মিনিটে",
+          "url": "https://www.banglatribune.com/others/930344/%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A6%BE%E0%A6%A8-%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE%E0%A7%9F-%E0%A6%9C%E0%A7%81%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%96%E0%A6%BE%E0%A6%A8%E0%A6%BE%E0%A7%9F-%E0%A6%86%E0%A6%97%E0%A7%81%E0%A6%A8-%E0%A6%A8%E0%A6%BF%E0%A6%AD%E0%A6%B2-%E0%A7%A9%E0%A7%A6-%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A6%BF%E0%A6%9F%E0%A7%87",
+          "language": "bn",
+          "score": 0.7340388298034668,
+          "confidence": 0.7410667663385799
+        },
+        {
+          "rank": 7,
+          "title": "যুক্তরাষ্ট্র-বাংলাদেশ যৌথ উদ্যোগে ‘মানি লন্ডারিং বেঞ্চ বুক’ উদ্বোধন",
+          "url": "https://www.dhakapost.com/national/416323",
+          "language": "bn",
+          "score": 0.721843957901001,
+          "confidence": 0.7127438847128204
+        },
+        {
+          "rank": 8,
+          "title": "মশার কয়েল থেকে ঘরে আগুন, দেড় বছরের শিশুর মৃত্যু",
+          "url": "https://www.prothomalo.com/bangladesh/district/egr27w54r2",
+          "language": "bn",
+          "score": 0.7204121351242065,
+          "confidence": 0.7094184420726221
+        },
+        {
+          "rank": 9,
+          "title": "পরিত্যক্ত ‘সাভার কমিউনিটি সেন্টার’ থেকে এবার ২ জনের পোড়া মরদেহ উদ্ধার",
+          "url": "https://www.prothomalo.com/bangladesh/district/eb6f3qmb0e",
+          "language": "bn",
+          "score": 0.698439359664917,
+          "confidence": 0.6583861456040533
+        },
+        {
+          "rank": 10,
+          "title": "দুই দিনের ব্যবধানে বাড্ডায় ফের যাত্রীবাহী বাসে আগুন",
+          "url": "https://www.dhakapost.com/national/416684",
+          "language": "bn",
+          "score": 0.6948269605636597,
+          "confidence": 0.6499962623032518
+        }
+      ]
+    },
+    {
+      "query": "সিলেটের বন্যা",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "রেজওয়ানা চৌধুরী বন্যা গাইলেন ‘ইস্ট মিটস ওয়েস্ট’ আয়োজনে",
+          "url": "https://www.prothomalo.com/entertainment/song/x63clewi5h",
+          "language": "bn",
+          "score": 0.7719917297363281,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "সিলেটে ‘ট্রেনের ধাক্কায়’ ডোবায় পড়া হাতি উদ্ধার, চলছে চিকিৎসা",
+          "url": "https://www.prothomalo.com/bangladesh/district/ab2nxt7vmn",
+          "language": "bn",
+          "score": 0.7495898008346558,
+          "confidence": 0.9582221208213416
+        },
+        {
+          "rank": 3,
+          "title": "New Age | Death toll in central Nigeria flood rises to 88",
+          "url": "https://www.newagebd.net/post/africa/266308/death-toll-in-central-nigeria-flood-rises-to-88",
+          "language": "en",
+          "score": 0.7469373345375061,
+          "confidence": 0.953275474620732
+        },
+        {
+          "rank": 4,
+          "title": "বন্যাজয়ী বিনা ধান-১১ লাভবান করছে কৃষকদের",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/73454",
+          "language": "bn",
+          "score": 0.7266029715538025,
+          "confidence": 0.9153534472972397
+        },
+        {
+          "rank": 5,
+          "title": "আমার পরিবারের প্রথম গ্র্যাজুয়েট হয়ে আমি সত্যিই গর্বিত— বন্যা উরাং",
+          "url": "https://trust.prothomalo.com/activities/oditiya/nnkxtuvhw5",
+          "language": "bn",
+          "score": 0.6912515163421631,
+          "confidence": 0.8494256947762784
+        },
+        {
+          "rank": 6,
+          "title": "উন্নত আবহাওয়া ও বন্যার তথ্য ব্যবস্থা নিয়ে কর্মশালা অনুষ্ঠিত",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/65920",
+          "language": "bn",
+          "score": 0.6490215063095093,
+          "confidence": 0.770669965097749
+        },
+        {
+          "rank": 7,
+          "title": "বিপিএল: শেষের নাটকীয়তার পর ৫ রানে জিতল রাজশাহী",
+          "url": "https://www.prothomalo.com/sports/cricket/e34xxxgna1",
+          "language": "bn",
+          "score": 0.639845073223114,
+          "confidence": 0.7535566212219971
+        },
+        {
+          "rank": 8,
+          "title": "সিলেটে মোটরসাইকেল দুর্ঘটনায় প্রাণ হারালেন মামাতো ও ফুফাতো ভাই",
+          "url": "https://www.prothomalo.com/bangladesh/district/9j08hex6dd",
+          "language": "bn",
+          "score": 0.6316609382629395,
+          "confidence": 0.7382938372426013
+        },
+        {
+          "rank": 9,
+          "title": "New Age | Flash flood kills dozens in Morocco town",
+          "url": "https://www.newagebd.net/post/africa/285287/flash-flood-kills-dozens-in-morocco-town",
+          "language": "en",
+          "score": 0.6275893449783325,
+          "confidence": 0.730700628057108
+        },
+        {
+          "rank": 10,
+          "title": "৩০ লাখ টন চাল উদ্বৃত্ত থাকবে: ব্রি",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/1371",
+          "language": "bn",
+          "score": 0.6239652037620544,
+          "confidence": 0.723941882659574
+        }
+      ]
+    },
+    {
+      "query": "Bangladesh economy",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "ঢাকা কলেজের অর্থনীতি বিভাগের ১৮টি ব্যাচের পুনর্মিলনী",
+          "url": "https://www.dhakapost.com/campus/101993",
+          "language": "bn",
+          "score": 0.7264281511306763,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "ব্যবসা এবং অর্থনীতির উন্নয়নে খালেদা জিয়ার অবদান সুদূরপ্রসারী: সিমিন রহমান",
+          "url": "https://www.prothomalo.com/politics/7s1nxf2qgt",
+          "language": "bn",
+          "score": 0.7033439874649048,
+          "confidence": 0.936612005580215
+        },
+        {
+          "rank": 3,
+          "title": "শুধু সুষ্ঠু নির্বাচনই নয়, অর্থনৈতিক শৃঙ্খলাও ফেরাতে হবে",
+          "url": "https://www.prothomalo.com/opinion/column/hhi6dfbooe",
+          "language": "bn",
+          "score": 0.7008825540542603,
+          "confidence": 0.9298530287527391
+        },
+        {
+          "rank": 4,
+          "title": "সামুদ্রিক মৎস্যসম্পদ সুনীল অর্থনীতিকে সমৃদ্ধ করবে",
+          "url": "https://www.dhakapost.com/agriculture-and-nature/58524",
+          "language": "bn",
+          "score": 0.6887868642807007,
+          "confidence": 0.8966388509739394
+        },
+        {
+          "rank": 5,
+          "title": "বৈজ্ঞানিকভাবে মাছ চাষ খাদ্য নিরাপত্তায় নতুন সম্ভাবনা সৃষ্টি করছে",
+          "url": "https://www.dhakapost.com/national/416707",
+          "language": "bn",
+          "score": 0.6332494616508484,
+          "confidence": 0.7441358355317821
+        },
+        {
+          "rank": 6,
+          "title": "অর্থনীতি আর ভঙ্গুর অবস্থায় নেই, রিজার্ভ এখন ৩২ বিলিয়ন: অর্থ উপদেষ্টা",
+          "url": "https://www.banglatribune.com/country/chitagong/930529/%E0%A6%85%E0%A6%A5%E0%A6%A8%E0%A7%80%E0%A6%A4%E0%A6%BF-%E0%A6%86%E0%A6%B0-%E0%A6%AD%E0%A6%99%E0%A7%8D%E0%A6%97%E0%A7%81%E0%A6%B0-%E0%A6%85%E0%A6%AC%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%BE%E0%A6%AF%E0%A6%BC-%E0%A6%A8%E0%A7%87%E0%A6%87-%E0%A6%B0%E0%A6%BF%E0%A6%9C%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%AD-%E0%A6%8F%E0%A6%96%E0%A6%A8-%E0%A7%A9%E0%A7%A8",
+          "language": "bn",
+          "score": 0.6321074962615967,
+          "confidence": 0.7410000539297478
+        },
+        {
+          "rank": 7,
+          "title": "সরকার হাদিকে রক্ষা করতে ব্যর্থ হয়েছে : আব্দুল্লাহ আল জাবের",
+          "url": "https://www.dhakapost.com/politics/416688",
+          "language": "bn",
+          "score": 0.6216534376144409,
+          "confidence": 0.712293715645871
+        },
+        {
+          "rank": 8,
+          "title": "Running on empty",
+          "url": "https://www.dhakatribune.com/opinion/op-ed/401315/running-on-empty",
+          "language": "en",
+          "score": 0.6208779811859131,
+          "confidence": 0.7101643498834372
+        },
+        {
+          "rank": 9,
+          "title": "ইবিতে ‘ক্যাশলেস বাংলাদেশ উদ্যোগ’ শীর্ষক সেমিনার",
+          "url": "https://www.banglatribune.com/others/930580/%E0%A6%87%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A7%87-%E2%80%98%E0%A6%95%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B6%E0%A6%B2%E0%A7%87%E0%A6%B8-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6-%E0%A6%89%E0%A6%A6%E0%A7%8D%E0%A6%AF%E0%A7%8B%E0%A6%97%E2%80%99-%E0%A6%B6%E0%A7%80%E0%A6%B0%E0%A7%8D%E0%A6%B7%E0%A6%95-%E0%A6%B8%E0%A7%87%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A6%BE%E0%A6%B0",
+          "language": "bn",
+          "score": 0.6178014874458313,
+          "confidence": 0.7017164472064186
+        },
+        {
+          "rank": 10,
+          "title": "লিথুয়ানিয়ার রাষ্ট্রপতির কা‌ছে বাংলাদেশের রাষ্ট্রদূতের পরিচয়পত্র পেশ",
+          "url": "https://www.dhakapost.com/national/415858",
+          "language": "bn",
+          "score": 0.6127434968948364,
+          "confidence": 0.687827450339827
+        }
+      ]
+    },
+    {
+      "query": "রাজনীতি",
+      "precision@10": 1.0,
+      "recall@50": 1.0,
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Tarique Rahman: Politics must move beyond decades of blame",
+          "url": "https://www.dhakatribune.com/bangladesh/politics/401358/tarique-rahman-politics-must-move-beyond-decades",
+          "language": "en",
+          "score": 0.7999999523162842,
+          "confidence": 1.0
+        },
+        {
+          "rank": 2,
+          "title": "অবৈধ আয়ে পরিচালিত রাজনীতি চাঁদাবাজিকে উৎসাহিত করে : পরিকল্পনা উপদেষ্টা",
+          "url": "https://www.dhakapost.com/national/414863",
+          "language": "bn",
+          "score": 0.7325881719589233,
+          "confidence": 0.8679671544682798
+        },
+        {
+          "rank": 3,
+          "title": "দেশের স্বাধীনতা ও সার্বভৌমত্বের প্রশ্নে আমরা আপসহীন : ডাকসু ভিপি",
+          "url": "https://www.dhakapost.com/campus/416520",
+          "language": "bn",
+          "score": 0.720746636390686,
+          "confidence": 0.8447742996252355
+        },
+        {
+          "rank": 4,
+          "title": "হাততালির রাজনীতিতে ভালো কথার জায়গা নেই",
+          "url": "https://www.prothomalo.com/opinion/column/i416ryj8t4",
+          "language": "bn",
+          "score": 0.7062268257141113,
+          "confidence": 0.8163357698898215
+        },
+        {
+          "rank": 5,
+          "title": "জুলাই গণঅভ্যুত্থানের পর বাংলাদেশের রাজনীতি কোন পথে?",
+          "url": "https://www.dhakapost.com/opinion/416554",
+          "language": "bn",
+          "score": 0.649031400680542,
+          "confidence": 0.7043126979794567
+        },
+        {
+          "rank": 6,
+          "title": "ক্ষমতায় গেলে মানুষ কেন বদলে যায়",
+          "url": "https://www.prothomalo.com/opinion/column/a51rnb2avm",
+          "language": "bn",
+          "score": 0.6108685731887817,
+          "confidence": 0.6295669090303732
+        },
+        {
+          "rank": 7,
+          "title": "সাংস্কৃতিক বৈচিত্র্য যেভাবে আমাদের অস্তিত্বের অংশ",
+          "url": "https://www.prothomalo.com/opinion/column/mcbpc4mxa8",
+          "language": "bn",
+          "score": 0.5740957856178284,
+          "confidence": 0.5575436550028403
+        },
+        {
+          "rank": 8,
+          "title": "এই সরকার পালানো দরকার, মমতাকে ইঙ্গিত করে মোদি",
+          "url": "https://www.banglatribune.com/foreign/asia/930348/%E0%A6%8F%E0%A6%87-%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0-%E0%A6%AA%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%A8%E0%A7%8B-%E0%A6%A6%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0-%E0%A6%AE%E0%A6%AE%E0%A6%A4%E0%A6%BE%E0%A6%95%E0%A7%87-%E0%A6%87%E0%A6%99%E0%A7%8D%E0%A6%97%E0%A6%BF%E0%A6%A4-%E0%A6%95%E0%A6%B0%E0%A7%87-%E0%A6%AE%E0%A7%8B%E0%A6%A6%E0%A6%BF",
+          "language": "bn",
+          "score": 0.565239429473877,
+          "confidence": 0.5401975784487213
+        },
+        {
+          "rank": 9,
+          "title": "গণ–অভ‍্যুত্থান–পরবর্তী নির্বাচনে নারীরা কোথায়",
+          "url": "https://www.prothomalo.com/opinion/column/442r4rkg9i",
+          "language": "bn",
+          "score": 0.5537866353988647,
+          "confidence": 0.5177661134585287
+        },
+        {
+          "rank": 10,
+          "title": "কর্তৃত্ববাদী ব্যবস্থা যেভাবে সামাজিক সম্পর্কগুলো বদলে দেয়",
+          "url": "https://www.prothomalo.com/opinion/column/vfmplmftsq",
+          "language": "bn",
+          "score": 0.553341269493103,
+          "confidence": 0.5168938189199658
+        }
+      ]
+    }
+  ]
+}
